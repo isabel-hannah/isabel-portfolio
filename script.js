@@ -1,3 +1,59 @@
+// Typewriter effect on home page header (index only)
+const typedTitleEl = document.getElementById('typed-title');
+const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '';
+if (typedTitleEl && isHomePage) {
+    const fullText = 'SENIOR UX CONTENT DESIGNER';
+    const typingSpeed = 85;
+    const startDelay = 500;
+
+    let charIndex = 0;
+
+    function typeChar() {
+        if (charIndex < fullText.length) {
+            typedTitleEl.textContent += fullText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeChar, typingSpeed);
+        }
+    }
+
+    setTimeout(typeChar, startDelay);
+}
+
+// Scroll-triggered reveals (Intersection Observer)
+const revealTargets = document.querySelectorAll('.work-section-header, .work-item');
+if (revealTargets.length && 'IntersectionObserver' in window) {
+    const reveal = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add('in-view');
+                reveal.unobserve(e.target);
+            }
+        });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+    revealTargets.forEach((el) => reveal.observe(el));
+}
+
+// 3D tilt on hover (ad-agency style) – skip when user prefers reduced motion
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReducedMotion) {
+    document.querySelectorAll('.work-item[data-tilt]').forEach((card) => {
+        const tilt = 6;
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            const rx = (y - 0.5) * -tilt;
+            const ry = (x - 0.5) * tilt;
+            card.style.setProperty('--tilt-x', rx + 'deg');
+            card.style.setProperty('--tilt-y', ry + 'deg');
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--tilt-x', '0deg');
+            card.style.setProperty('--tilt-y', '0deg');
+        });
+    });
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
