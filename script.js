@@ -1,6 +1,12 @@
+// Always land on header when loading homepage (no scroll to #work)
+const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '';
+if (isHomePage) {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+}
+
 // Typewriter effect on home page header (index only)
 const typedTitleEl = document.getElementById('typed-title');
-const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '';
 if (typedTitleEl && isHomePage) {
     const fullText = 'SENIOR UX CONTENT DESIGNER';
     const typingSpeed = 85;
