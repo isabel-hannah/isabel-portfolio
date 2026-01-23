@@ -132,6 +132,68 @@ header {
     color: #000000; /* Navigation (Active) Color: Black */
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #808080;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.mobile-menu-toggle:hover {
+    color: #000000;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+}
+
+/* Mobile Menu Dropdown */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 300px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #808080;
+    text-align: center;
+    transition: color 0.2s;
+    padding: 10px 0;
+}
+
+.mobile-menu a:hover {
+    color: #000000;
+}
+
 main {
     padding: 0 75px 50px; /* Canvas Padding: 75px, Page Padding: 50px */
 }
@@ -252,6 +314,8 @@ footer:has(.footer-text) {
         flex-direction: column;
         padding: 40px 50px 40px;
         gap: 30px;
+        position: relative;
+        align-items: center;
     }
 
     .name {
@@ -259,7 +323,12 @@ footer:has(.footer-text) {
     }
 
     .header-right {
-        gap: 30px;
+        display: none; /* Hide regular nav on mobile */
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        margin-top: 10px;
     }
 
     main {
@@ -286,16 +355,18 @@ footer:has(.footer-text) {
     }
 
     .header-right {
-        flex-wrap: wrap;
-        gap: 20px;
+        display: none; /* Hide regular nav on mobile */
     }
 
-    .header-right a {
-        font-size: 13px;
+    .mobile-menu-toggle {
+        display: block;
+        margin-top: 10px;
     }
 
     header {
         padding: 30px 20px 40px;
+        position: relative;
+        align-items: center;
     }
 
     main {
@@ -520,7 +591,7 @@ footer .footer-content:has(.footer-text) {
     height: auto;
     display: block;
     object-fit: contain;
-    background-color: #f5f5f5;
+    background-color: transparent;
 }
 
 .project-hero-description {
@@ -643,8 +714,8 @@ footer .footer-content:has(.footer-text) {
 
 .project-process-subheading {
     font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.3em;
-    font-weight: 400;
+    font-size: 1.1em;
+    font-weight: 500;
     color: #333333;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -938,12 +1009,18 @@ footer .footer-content:has(.footer-text) {
 .project-localization-image {
     width: 100%;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background-color: #f9f9f9;
 }
 
 .project-localization-image img {
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 400px;
     display: block;
     object-fit: contain;
 }
@@ -1010,6 +1087,42 @@ footer .footer-content:has(.footer-text) {
     line-height: 1.4em;
     color: #666666;
     text-transform: uppercase;
+}
+
+.project-impact-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0;
+}
+
+.project-impact-bullets li {
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.6em;
+    color: #666666;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.project-impact-bullets li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666666;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.project-impact-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+.project-impact-bullets li em {
+    font-style: italic;
+    text-transform: none;
 }
 
 /* Project Navigation Footer */
@@ -1277,5 +1390,154 @@ footer .footer-content:has(.footer-text) {
     .project-gallery,
     .project-gifs {
         gap: 30px;
+    }
+
+    /* Project Hero Image - Mobile */
+    .project-hero {
+        min-height: 250px;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+
+    .project-hero img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    .project-hero-description {
+        margin: 20px auto 40px;
+    }
+
+    /* Project Details Layout - Mobile */
+    .project-details-left .project-gif {
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .project-details-left .project-gif img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Project Process Layouts - Mobile */
+    .project-process-audience-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .project-process-audience-left {
+        padding-top: 0;
+    }
+
+    .venn-diagram-image {
+        overflow: hidden;
+    }
+
+    .venn-diagram-image img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    .project-designing-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .project-image {
+        overflow: hidden;
+    }
+
+    .project-image img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Full Width Images - Mobile */
+    .project-feature-tour-image-full,
+    .project-enablement-image-full,
+    .project-error-states-image-full {
+        margin: 30px 0 40px;
+        overflow: hidden;
+    }
+
+    .project-feature-tour-image-full img,
+    .project-enablement-image-full img,
+    .project-error-states-image-full img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Error States GIFs - Mobile */
+    .project-error-states-gifs {
+        flex-direction: column;
+        gap: 30px;
+        margin: 30px auto 40px;
+    }
+
+    .project-error-gif {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .project-error-gif img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Localization Images - Mobile */
+    .project-localization-images {
+        flex-direction: column;
+        gap: 40px;
+        margin: 30px 0;
+    }
+
+    .project-localization-image-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .project-localization-image img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Impact Stats - Mobile */
+    .project-impact-value {
+        font-size: 3em;
+    }
+
+    /* Project Navigation Footer - Mobile */
+    .project-navigation-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Additional mobile adjustments for very small screens */
+    .project-hero {
+        min-height: 200px;
+    }
+
+    .project-hero-description p {
+        font-size: 14px;
+    }
+
+    .project-impact-value {
+        font-size: 2.5em;
+    }
+
+    .project-feature-tour-heading,
+    .project-enablement-heading,
+    .project-error-states-heading {
+        font-size: 1em;
     }
 }
