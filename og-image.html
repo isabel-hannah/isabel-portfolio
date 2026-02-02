@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OG Image - Isabel Bakhshi | 1200×630</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { overflow: hidden; }
+        body {
+            width: 1200px;
+            height: 630px;
+            background-color: #FAF9F7;
+            position: relative;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 80px;
+            height: 100%;
+        }
+        .name {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 120px;
+            font-weight: 400;
+            line-height: 0.9;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            color: #1a1a1a;
+        }
+        .dotted-i {
+            position: relative;
+            display: inline-block;
+            color: transparent;
+        }
+        .dotted-i::after {
+            content: 'I';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #1a1a1a;
+            font-weight: 400;
+        }
+        .dotted-i::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #7c3aed;
+            border-radius: 50%;
+            top: -0.15em;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .tagline {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            color: #1a1a1a;
+            margin: 20px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="name">ISABEL BAKHSH<span class="dotted-i">I</span></h1>
+        <p class="tagline">I design clarity for complex systems.</p>
+    </div>
+</body>
+</html>

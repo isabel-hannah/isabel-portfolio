@@ -36,9 +36,14 @@ You can download these images from https://www.isabelbakhshi.com/ or use your ow
 - Hover effects on work items
 - Professional typography using Inter font
 
-## Customization
+## Open Graph Image (og-image.jpg)
 
-You can customize:
-- Colors in `styles.css`
-- Content in `index.html`
-- Interactive features in `script.js`
+The site uses `og-image.jpg` (1200×630) for social sharing. To generate it:
+
+1. **Preview the design:** Open `og-image.html` in a browser and verify the layout.
+2. **Generate the image:**
+   - `npm install puppeteer`
+   - `node generate-og-image.js`
+   - This creates `og-image.jpg` in the project root.
+
+Alternatively, use a browser screenshot or tool like [Canva](https://canva.com) with the layout in `og-image.html` as reference.
