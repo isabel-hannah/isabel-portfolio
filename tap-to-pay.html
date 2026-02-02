@@ -4,298 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tap to Pay on iPhone | Isabel Bakhshi</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <h1 class="name">ISABEL BAKHSHI</h1>
-            <p class="title">SENIOR UX CONTENT DESIGNER</p>
-        </div>
-        <nav class="header-right">
-            <a href="index.html">WORK</a>
-            <a href="experience.html">EXPERIENCE</a>
-            <a href="about.html">ABOUT</a>
+<body class="project-page ttp-case-study">
+    <header class="site-header site-header--sticky">
+        <nav class="header-nav ttp-header-nav">
+            <a href="index.html" class="back-to-work">← Back to work</a>
+            <div class="header-nav-right">
+                <a href="experience.html">Experience</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">Menu</button>
+        <nav class="mobile-menu">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <div class="project-section">
-            <div class="project-content">
-                <!-- Company Label -->
-                <div class="project-company">SQUARE</div>
-
-                <!-- Project Title -->
-                <h2 class="project-heading">TAP TO PAY ON IPHONE</h2>
-
-                <!-- Hero Image -->
-                <div class="project-hero">
-                    <img src="images/TTPi/TTPi%20hero.webp" alt="Tap to Pay on iPhone">
-                </div>
-
-                <!-- Hero Description -->
-                <div class="project-hero-description">
-                    <p>A REVOLUTIONARY NEW TECHNOLOGY ALLOWING BUSINESSES TO TAKE PAYMENTS DIRECTLY ON AN IPHONE.</p>
-                </div>
-
-                <!-- Two Column Layout (matches Outage Mode: narrow GIF, wider text) -->
-                <div class="project-details-layout" style="grid-template-columns: 0.5fr 1.5fr;">
-                    <!-- Left Column - GIF -->
-                    <div class="project-details-left">
-                        <div class="project-gif">
-                            <img src="images/TTPi/CleanShot%2B2024-09-19%2Bat%2B12.28.49.gif" alt="Tap to Pay on iPhone animation" style="max-width: 350px; width: 100%;">
-                        </div>
-                    </div>
-
-                    <!-- Right Column - Project Details -->
-                    <div class="project-details-right">
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">THE PROJECT</h3>
-                            <p>Design and introduce a new product experience known as Tap to Pay on iPhone—a brand new technology that allows businesses on Square to take contactless payments directly on their iPhones.</p>
-                        </div>
-
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">MY ROLE</h3>
-                            <ul class="project-role-list">
-                                <li>Lead Content Designer</li>
-                                <li>Content Strategy</li>
-                                <li>UX Writing</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MY PROCESS Section -->
-                <div class="project-process-section">
-                    <div class="project-process-layout">
-                        <h3 class="project-process-heading">MY PROCESS</h3>
-                        <p class="project-process-intro">Key parts of my process and a sample of my work can be found below. For a full case study, contact me.</p>
-                        
-                        <!-- Two Column Layout for Understanding the Audience -->
-                        <div class="project-process-audience-layout">
-                            <!-- Left Column - Text -->
-                            <div class="project-process-audience-left">
-                                <h4 class="project-process-subheading">UNDERSTANDING THE AUDIENCE</h4>
-                                <p class="project-process-text">We defined the audience by creating user profiles and assigning use cases based on past interviews and alpha users as a starting point.</p>
+        <!-- Hero Section -->
+        <section class="ttp-hero">
+            <div class="ttp-hero__inner">
+                <div class="ttp-hero__grid">
+                    <div class="ttp-hero__text">
+                        <p class="ttp-hero__company animate-fade">Square, Block Inc.</p>
+                        <h1 class="ttp-hero__title animate-fade">Tap to Pay on iPhone</h1>
+                        <p class="ttp-hero__subtitle animate-fade">A revolutionary new technology allowing businesses to take payments directly on an iPhone.</p>
+                        <div class="ttp-hero__meta animate-fade">
+                            <div>
+                                <p class="ttp-meta-label">Role</p>
+                                <p class="ttp-meta-value">Lead Content Designer</p>
                             </div>
-                            
-                            <!-- Right Column - Venn Diagram Image -->
-                            <div class="project-process-audience-right">
-                                <div class="venn-diagram-image">
-                                    <img src="images/TTPi/Two.webp" alt="Venn diagram showing New Sellers and Existing Sellers">
-                                </div>
+                            <div>
+                                <p class="ttp-meta-label">Year</p>
+                                <p class="ttp-meta-value">2022</p>
+                            </div>
+                            <div>
+                                <p class="ttp-meta-label">Duration</p>
+                                <p class="ttp-meta-value">8 months</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- DESIGNING FOR THE AUDIENCE Section -->
-                <div class="project-designing-section">
-                    <div class="project-designing-layout">
-                        <!-- Left Column - Image -->
-                        <div class="project-designing-left">
-                            <div class="project-image">
-                                <img src="images/TTPi/Frame%2B4212620.webp" alt="Designing for the audience flowchart">
-                            </div>
-                        </div>
-                        
-                        <!-- Right Column - Text -->
-                        <div class="project-designing-right">
-                            <h4 class="project-designing-heading">DESIGNING FOR THE AUDIENCE</h4>
-                            <p class="project-designing-text">I partnered with product design to work through flows. We considered design implications based on entry points and audience segments, as well as capabilities and differences across various software, hardware, devices, and platforms.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- COMMUNICATING WITH THE AUDIENCE Section -->
-                <div class="project-communicating-section">
-                    <div class="project-communicating-content">
-                        <h4 class="project-communicating-heading">COMMUNICATING WITH THE AUDIENCE</h4>
-                        <p class="project-communicating-text">Tap to Pay on iPhone was a content-heavy project that touched dozens of surfaces. A sample of my work on key surfaces can be found below.</p>
-                        
-                        <!-- FEATURE TOUR Subsection -->
-                        <div class="project-feature-tour-subsection">
-                            <h5 class="project-feature-tour-heading">FEATURE TOUR</h5>
-                            <p class="project-feature-tour-text">The feature tour orients users to the feature so they're ready to take their first payment. By the end of the tour, users should understand what Tap to Pay on iPhone is, why it's valuable, and how it works.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature Tour Image - Full Width -->
-                    <div class="project-feature-tour-image-full">
-                        <img src="images/TTPi/Group%2B4212554%2B(1).webp" alt="Feature tour screens">
-                    </div>
-                    
-                    <div class="project-communicating-content">
-                        <!-- ENABLEMENT Subsection -->
-                        <div class="project-enablement-subsection">
-                            <h5 class="project-enablement-heading">ENABLEMENT</h5>
-                            <p class="project-enablement-text">The enablement modal introduces the feature, with the goal of getting users to enable it right away.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Enablement Image - Full Width -->
-                    <div class="project-enablement-image-full">
-                        <img src="images/TTPi/Group%2B4212556%2B(1).webp" alt="Enablement screens">
-                    </div>
-                    
-                    <div class="project-communicating-content">
-                        <!-- ERROR STATES Subsection -->
-                        <div class="project-error-states-subsection">
-                            <h5 class="project-error-states-heading">ERROR STATES</h5>
-                            <p class="project-error-states-text">Here's a snapshot of my approach to handling Square and Apple errors for this project and final designs.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Error States Image - Full Width -->
-                    <div class="project-error-states-image-full">
-                        <img src="images/TTPi/Frame%2B4212596%2B(2).webp" alt="Error states">
-                    </div>
-                    
-                    <div class="project-communicating-content">
-                        <!-- Example of Final Error States Text -->
-                        <p class="project-error-states-example-text">Example of final error states and messaging</p>
-                    </div>
-                    
-                    <!-- Error States GIFs - Side by Side -->
-                    <div class="project-error-states-gifs">
-                        <div class="project-error-gif">
-                            <img src="images/TTPi/ezgif-3-913855a4a8.gif" alt="Error state animation">
-                        </div>
-                        <div class="project-error-gif">
-                            <img src="images/TTPi/ezgif-7-0505f6c171.gif" alt="Error state animation">
-                        </div>
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- LOCALIZATION Section -->
-                <div class="project-localization-section">
-                    <div class="project-localization-content">
-                        <h4 class="project-localization-heading">LOCALIZATION</h4>
-                        <p class="project-localization-text">This feature launched across 7 countries. To ensure success and UX remarkability in all of our markets, I partnered closely with Localization to implement locale-specific UI adaptations.</p>
-                    </div>
-                    
-                    <!-- Localization Images - Side by Side -->
-                    <div class="project-localization-images">
-                        <div class="project-localization-image-item">
-                            <div class="project-localization-image">
-                                <img src="images/TTPi/87713.webp" alt="Japan Feature Tour">
-                            </div>
-                            <p class="project-localization-caption">JAPAN FEATURE TOUR</p>
-                        </div>
-                        <div class="project-localization-image-item">
-                            <div class="project-localization-image">
-                                <img src="images/TTPi/TTPiCA.webp" alt="Canada Feature Tour">
-                            </div>
-                            <p class="project-localization-caption">CANADA (FR) FEATURE TOUR</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- IMPACT Section -->
-                <div class="project-impact-section">
-                    <div class="project-impact-content">
-                        <h4 class="project-impact-heading">IMPACT</h4>
-                        <div class="project-impact-stats">
-                            <div class="project-impact-stat">
-                                <span class="project-impact-value">2M</span>
-                                <span class="project-impact-label">USERS</span>
-                            </div>
-                            <div class="project-impact-stat">
-                                <span class="project-impact-value">90%</span>
-                                <span class="project-impact-label">RETENTION RATE</span>
-                            </div>
-                            <div class="project-impact-stat">
-                                <span class="project-impact-value">82%</span>
-                                <span class="project-impact-label">SAY "EASY TO USE"</span>
-                            </div>
-                            <div class="project-impact-stat">
-                                <span class="project-impact-value">52%</span>
-                                <span class="project-impact-label">ADOPTION RATE</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation and Back to Work -->
-                <div class="project-navigation-footer">
-                    <div class="project-back">
-                        <a href="index.html" class="back-link">← Back to Work</a>
-                    </div>
-                    <div class="project-nav-arrows">
-                        <a href="#" class="project-nav-prev">prev</a>
-                        <span class="project-nav-divider">/</span>
-                        <a href="outage-mode.html" class="project-nav-next">next</a>
+                    <div class="ttp-hero__image animate-fade">
+                        <img src="images/TTPi/TTPi%20hero.webp" alt="Tap to Pay on iPhone">
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Project Navigation Tiles -->
-        <div class="project-nav-tiles-section">
-            <div class="project-nav-tiles-grid">
-                <a href="tap-to-pay.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Tap to Pay.webp" alt="Tap to Pay on iPhone">
+        </section>
+
+        <!-- Approach Section -->
+        <section class="ttp-approach">
+            <div class="ttp-section__inner">
+                <div class="ttp-approach__grid">
+                    <div class="ttp-approach__left animate-fade">
+                        <p class="ttp-eyebrow">The Approach</p>
+                        <p class="ttp-approach__text">Being part of a new product launch meant our team at Square had the unique challenge of building trust from scratch, particularly in the US, where tap-to-pay is still emerging.</p>
                     </div>
-                    <h3 class="project-nav-title">TAP TO PAY ON IPHONE</h3>
-                </a>
-                
-                <a href="outage-mode.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Outage Mode.webp" alt="Outage Mode">
+                    <div class="ttp-approach__right animate-fade">
+                        <p class="ttp-eyebrow">My Role</p>
+                        <ul class="ttp-role-list">
+                            <li><span class="ttp-bullet"></span> Led Content Strategy</li>
+                            <li><span class="ttp-bullet"></span> UX Writing</li>
+                            <li><span class="ttp-bullet"></span> Content Design</li>
+                        </ul>
                     </div>
-                    <h3 class="project-nav-title">OUTAGE MODE</h3>
-                </a>
-                
-                <a href="square-one.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square One.webp" alt="Square One">
+                </div>
+            </div>
+        </section>
+
+        <!-- Manifesto -->
+        <section class="ttp-manifesto">
+            <div class="ttp-section__inner ttp-section__narrow">
+                <p class="ttp-manifesto__text animate-fade">The challenge was clear: make an invisible technology feel <em>tangible</em>, trustworthy, and effortless.</p>
+            </div>
+        </section>
+
+        <!-- Understanding Audience -->
+        <section class="ttp-audience">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Understanding Our Audience</p>
+                <div class="ttp-audience__grid">
+                    <div class="ttp-audience__card animate-fade">
+                        <h3 class="ttp-audience__title">New Sellers</h3>
+                        <p>First-time business owners unfamiliar with payment processing. They need confidence-building language that demystifies the technology and clear onboarding that reduces anxiety.</p>
                     </div>
-                    <h3 class="project-nav-title">SQUARE ONE</h3>
-                </a>
-                
-                <a href="cash-app-square.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Cash App + Square.webp" alt="Cash App Square">
+                    <div class="ttp-audience__card animate-fade">
+                        <h3 class="ttp-audience__title">Existing Sellers</h3>
+                        <p>Experienced merchants already using Square hardware. They want efficiency-focused content that highlights speed and flexibility without redundant explanations.</p>
                     </div>
-                    <h3 class="project-nav-title">CASH APP 🤝 SQUARE</h3>
-                </a>
-                
-                <a href="square-strategist.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square Strategist AI.webp" alt="AI-Generated Business Insights">
+                </div>
+            </div>
+        </section>
+
+        <!-- User Journey -->
+        <section class="ttp-journey">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">The User Journey</p>
+                <div class="ttp-journey__grid">
+                    <div class="ttp-journey__card animate-fade">
+                        <p class="ttp-journey__step">Step 01</p>
+                        <h3 class="ttp-journey__title">A new way to take payments</h3>
+                        <p class="ttp-journey__desc">Introducing contactless payments without additional hardware.</p>
                     </div>
-                    <h3 class="project-nav-title">AI-GENERATED BUSINESS INSIGHTS</h3>
-                </a>
-                
-                <a href="ai-item-library.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/AI Library.webp" alt="AI Item Library Generator">
+                    <div class="ttp-journey__card animate-fade">
+                        <p class="ttp-journey__step">Step 02</p>
+                        <h3 class="ttp-journey__title">All payment types welcome</h3>
+                        <p class="ttp-journey__desc">Support for credit, debit, and digital wallets in one tap.</p>
                     </div>
-                    <h3 class="project-nav-title">AI ITEM LIBRARY GENERATOR</h3>
+                    <div class="ttp-journey__card animate-fade">
+                        <p class="ttp-journey__step">Step 03</p>
+                        <h3 class="ttp-journey__title">Hold and wait for the tone</h3>
+                        <p class="ttp-journey__desc">Clear audio and visual feedback guides the interaction.</p>
+                    </div>
+                    <div class="ttp-journey__card animate-fade">
+                        <p class="ttp-journey__step">Step 04</p>
+                        <h3 class="ttp-journey__title">Get ready to give it a go</h3>
+                        <p class="ttp-journey__desc">Onboarding that builds confidence from the first transaction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content in Context -->
+        <section class="ttp-content">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Content in Context</p>
+                <div class="ttp-content__grid">
+                    <div class="ttp-content__item animate-fade">
+                        <div class="ttp-content__placeholder" data-placeholder="1">App Screenshot 1</div>
+                    </div>
+                    <div class="ttp-content__item animate-fade">
+                        <div class="ttp-content__placeholder" data-placeholder="2">App Screenshot 2</div>
+                    </div>
+                    <div class="ttp-content__item animate-fade">
+                        <div class="ttp-content__placeholder" data-placeholder="3">App Screenshot 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reflection -->
+        <section class="ttp-reflection">
+            <div class="ttp-section__inner ttp-section__narrow">
+                <p class="ttp-eyebrow ttp-eyebrow--light animate-fade">Reflection</p>
+                <p class="ttp-reflection__text animate-fade">This project taught me that the best UX writing is often invisible. The real work isn't in finding clever words—it's in understanding the exact moment a user needs reassurance, guidance, or simply permission to proceed.</p>
+            </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="ttp-impact">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Impact</p>
+                <div class="ttp-impact__grid">
+                    <div class="ttp-impact__stat animate-fade">
+                        <span class="ttp-impact__value">2M+</span>
+                        <span class="ttp-impact__label">Transactions processed</span>
+                    </div>
+                    <div class="ttp-impact__stat animate-fade">
+                        <span class="ttp-impact__value">90%</span>
+                        <span class="ttp-impact__label">Merchant satisfaction</span>
+                    </div>
+                    <div class="ttp-impact__stat animate-fade">
+                        <span class="ttp-impact__value">82%</span>
+                        <span class="ttp-impact__label">Task completion rate</span>
+                    </div>
+                    <div class="ttp-impact__stat animate-fade">
+                        <span class="ttp-impact__value">52%</span>
+                        <span class="ttp-impact__label">Reduction in support tickets</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section class="ttp-next">
+            <div class="ttp-section__inner">
+                <a href="square-one.html" class="ttp-next__link">
+                    <div>
+                        <p class="ttp-eyebrow">Next Project</p>
+                        <p class="ttp-next__title">Square One</p>
+                    </div>
+                    <span class="ttp-next__arrow" aria-hidden="true">↗</span>
                 </a>
             </div>
-        </div>
+        </section>
+
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <a href="https://www.linkedin.com/in/isabelhb/" target="_blank" class="linkedin-link">in</a>
+    <footer id="contact" class="site-footer">
+        <div class="footer-gradient" aria-hidden="true"></div>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h2 class="footer-heading">Let's talk.</h2>
+                    <p class="footer-intro">I'm always open to discussing new projects, content strategy challenges, or opportunities to collaborate.</p>
+                    <nav class="footer-links">
+                        <a href="https://linkedin.com/in/isabelbakhshi" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="#" class="footer-link" id="resume-link" target="_blank" rel="noopener">Resume<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="mailto:hello@isabelbakhshi.com" class="footer-link">Email<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                    </nav>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-role">Senior Content Designer</p>
+                    <p class="footer-location">Based in New York City</p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span class="footer-name">Isabel Bakhshi</span>
+                <span class="footer-year">2026</span>
+            </div>
         </div>
     </footer>
 

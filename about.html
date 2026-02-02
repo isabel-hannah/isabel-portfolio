@@ -4,60 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Isabel Bakhshi</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <h1 class="name">ISABEL BAKHSHI</h1>
-            <p class="title">SENIOR UX CONTENT DESIGNER</p>
-        </div>
-        <nav class="header-right">
-            <a href="index.html">WORK</a>
-            <a href="experience.html">EXPERIENCE</a>
-            <a href="about.html">ABOUT</a>
+<body class="about-page">
+    <header class="site-header site-header--sticky">
+        <nav class="header-nav">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">Menu</button>
+        <nav class="mobile-menu">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <div class="about-section">
-            <div class="about-content">
-                <!-- Page headline -->
-                <h2 class="about-heading">About</h2>
-
-                <div class="about-layout">
-                    <!-- Left side - Image -->
-                    <div class="about-image-container">
-                        <div class="about-image">
-                            <img src="images/About/resizeno3.jpg" alt="Isabel Bakhshi">
-                            <div class="image-overlay">
-                                <span>Hi, I'm Isabel.</span>
-                            </div>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="about-hero__inner">
+                <div class="about-hero__grid">
+                    <div class="about-hero__image-wrap">
+                        <div class="about-hero__image-clip">
+                            <img src="images/About/resizeno3.jpg" alt="Isabel Bakhshi" class="about-hero__image">
                         </div>
+                        <div class="about-hero__label">Hi, I'm Isabel.</div>
                     </div>
 
-                    <!-- Right side - Text -->
-                    <div class="about-text">
-                        <p>
-                            I design elegant, meaningful product experiences through the lens of language. As a content designer, my work goes beyond the words on an interface—I focus on ensuring users receive the right information, in the right way, at the right time.
-                        </p>
-                        <p>
-                            I'm especially drawn to complex systems and high-stakes environments, where clarity isn't just a nice-to-have. I see language as the bridge between technology and the people navigating it—a way to make complicated things feel more approachable, usable, and human.
-                        </p>
+                    <div class="about-hero__content">
+                        <p class="about-hero__eyebrow">About</p>
+                        <h1 class="about-hero__headline">Designing with<br><span class="italic">intention</span>.</h1>
+                        <div class="about-hero__body">
+                            <p>I design elegant, meaningful product experiences through the lens of language. As a content designer, my work goes beyond the words on an interface—I focus on ensuring users receive the right information, in the right way, at the right time.</p>
+                            <p>I'm especially drawn to complex systems and high-stakes environments, where clarity isn't just a nice-to-have. I see language as the bridge between technology and the people navigating it—a way to make complicated things feel more approachable, usable, and human.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </section>
 
-    <footer>
-        <div class="footer-content">
-            <a href="https://www.linkedin.com/in/isabelhb/" target="_blank" class="linkedin-link">in</a>
-        </div>
-    </footer>
+        <!-- Philosophy Section -->
+        <section class="about-philosophy" id="philosophy">
+            <div class="about-philosophy__inner" id="philosophy-scroll-target">
+                <p class="about-philosophy__text" id="philosophy-reveal"></p>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="about-values">
+            <div class="about-values__inner">
+                <p class="about-values__eyebrow animate-fade">How I Work</p>
+                <div class="about-values__grid">
+                    <div class="about-values__item animate-fade">
+                        <span class="about-values__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 10l5.813 1.912a2 2 0 0 1 1.275 1.275L12 17l1.912-5.813a2 2 0 0 1 1.275-1.275L21 10l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M3 5h4"/><path d="M19 17v4"/><path d="M17 19h4"/></svg></span>
+                        <h3 class="about-values__title">Clarity first</h3>
+                        <p class="about-values__desc">Every word earns its place. I cut through complexity to find the simplest path to understanding.</p>
+                    </div>
+                    <div class="about-values__item animate-fade">
+                        <span class="about-values__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+                        <h3 class="about-values__title">Human-centered</h3>
+                        <p class="about-values__desc">I write for real people in real moments—considering context, emotion, and what they actually need.</p>
+                    </div>
+                    <div class="about-values__item animate-fade">
+                        <span class="about-values__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+                        <h3 class="about-values__title">Systems thinking</h3>
+                        <p class="about-values__desc">Content doesn't exist in isolation. I build scalable patterns that stay consistent across experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="site-footer about-footer">
+            <div class="footer-gradient" aria-hidden="true"></div>
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <h2 class="footer-heading">Let's talk.</h2>
+                        <p class="footer-intro">I'm always open to discussing new projects, content strategy challenges, or opportunities to collaborate.</p>
+                        <nav class="footer-links">
+                            <a href="https://linkedin.com/in/isabelbakhshi" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                            <a href="#" class="footer-link" id="resume-link" target="_blank" rel="noopener">Resume<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                            <a href="mailto:hello@isabelbakhshi.com" class="footer-link">Email<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        </nav>
+                    </div>
+                    <div class="footer-right">
+                        <p class="footer-role">Senior Content Designer</p>
+                        <p class="footer-location">Based in New York City</p>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <span class="footer-name">Isabel Bakhshi</span>
+                    <span class="footer-year">2026</span>
+                </div>
+            </div>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
