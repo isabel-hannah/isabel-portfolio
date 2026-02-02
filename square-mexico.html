@@ -46,9 +46,19 @@
                 <p class="mexico-hero__company animate-fade">Square, Block Inc.</p>
                 <h1 class="mexico-hero__title animate-fade">Launching Square in Mexico</h1>
                 <p class="mexico-hero__subtitle animate-fade">A localized payments experience built through in-country research and cross-border partnership.</p>
-                <div class="mexico-hero__placeholder animate-fade">
-                    <span class="mexico-hero__placeholder-text">Hero image placeholder</span>
-                    <span class="mexico-hero__placeholder-sub">Map graphic or research photo</span>
+                <div class="mexico-hero__map animate-fade">
+                    <svg viewBox="0 0 800 450" class="mexico-hero__svg" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Baja California - tall thin vertical rectangle -->
+                        <rect x="80" y="80" width="25" height="300" fill="rgba(124, 58, 237, 0.04)" stroke="#404040" stroke-width="1" class="mexico-map__shape" />
+                        <!-- Mexico mainland - L-shaped staircase -->
+                        <path d="M150 80 H620 V160 H580 V220 H540 V280 H480 V340 H400 V400 H260 V340 H200 V280 H180 V200 H150 V80 Z" fill="rgba(124, 58, 237, 0.04)" stroke="#404040" stroke-width="1" stroke-linejoin="round" class="mexico-map__shape" />
+                        <!-- Yucatan hook -->
+                        <path d="M480 340 H560 V380 H620 V420 H520 V380 H480 V340 Z" fill="rgba(124, 58, 237, 0.04)" stroke="#404040" stroke-width="1" stroke-linejoin="round" class="mexico-map__shape" />
+                        <!-- Mexico City marker -->
+                        <circle cx="400" cy="225" r="8" fill="#7C3AED" class="mexico-map__marker" />
+                        <!-- CDMX Label -->
+                        <text x="418" y="230" fill="#404040" font-size="12" font-family="ui-monospace, monospace" font-weight="500" letter-spacing="0.1em" class="mexico-map__label">CDMX</text>
+                    </svg>
                 </div>
                 <div class="mexico-hero__meta animate-fade">
                     <div>
@@ -57,7 +67,7 @@
                     </div>
                     <div>
                         <p class="mexico-meta-label">Year</p>
-                        <p class="mexico-meta-value">2024</p>
+                        <p class="mexico-meta-value">2025</p>
                     </div>
                     <div>
                         <p class="mexico-meta-label">Focus</p>
@@ -103,13 +113,13 @@
                 <p class="mexico-research__intro animate-fade">Partnered with product design to co-create a research plan. Visited coffee shops in Mexico City to test the end-to-end experience with local sellers—validating flows, framing, and language through live feedback sessions.</p>
                 <div class="mexico-research__grid animate-fade">
                     <div class="mexico-research__photo">
-                        <img src="images/Mexico/ph220115Q_MijaFitness_0326@3x.png" alt="Research session with seller">
+                        <img src="images/Mexico/IMG_4001 2.JPG" alt="Research session with seller">
                     </div>
-                    <div class="mexico-research__photo mexico-research__photo--placeholder">
-                        <span class="mexico-research__placeholder-text">Research photo 2</span>
+                    <div class="mexico-research__photo">
+                        <img src="images/Mexico/IMG_4030.JPG" alt="Research notes and insights">
                     </div>
-                    <div class="mexico-research__photo mexico-research__photo--placeholder">
-                        <span class="mexico-research__placeholder-text">Research photo 3</span>
+                    <div class="mexico-research__photo">
+                        <img src="images/Mexico/C0152B02-4ACE-43AE-B780-48903B15B764_4_5005_c.jpg" alt="Team collaboration">
                     </div>
                 </div>
                 <div class="mexico-research__insights animate-fade">
@@ -125,24 +135,38 @@
         <section class="mexico-partnership">
             <div class="ttp-section__inner">
                 <div class="mexico-partnership__grid">
-                    <div class="animate-fade">
+                    <div class="mexico-partnership__content animate-fade">
                         <p class="ttp-eyebrow">The Craft</p>
                         <h2 class="mexico-partnership__title">Cross-Border Partnership</h2>
                         <p class="mexico-partnership__text">Worked closely with dLocal's design team to create seamless handoffs between Square and their surfaces. The payment processing and onboarding lived in their system, but users needed to feel like they never left Square.</p>
                         <p class="mexico-partnership__text">Also partnered with a regional hardware provider to enable terminal payments—expanding the solution beyond software.</p>
                     </div>
                     <div class="mexico-partnership__diagram animate-fade">
-                        <div class="mexico-partnership__flow">
-                            <div class="mexico-partnership__box">
-                                <p class="mexico-partnership__box-title">Square</p>
-                                <p class="mexico-partnership__box-sub">Surfaces</p>
+                        <div class="mexico-architecture">
+                            <div class="mexico-architecture__node">
+                                <div class="mexico-architecture__box">
+                                    <p class="mexico-architecture__label">Square Ecosystem</p>
+                                </div>
+                                <ul class="mexico-architecture__meta">
+                                    <li>Merchant UI</li>
+                                    <li>Hardware</li>
+                                    <li>Daily Reporting</li>
+                                </ul>
                             </div>
-                            <div class="mexico-partnership__connector">
-                                <span>Seamless handoff</span>
+                            <div class="mexico-architecture__bridge">
+                                <span class="mexico-architecture__arrow mexico-architecture__arrow--left">→</span>
+                                <span class="mexico-architecture__badge">Seamless Handoff</span>
+                                <span class="mexico-architecture__arrow mexico-architecture__arrow--right">←</span>
                             </div>
-                            <div class="mexico-partnership__box">
-                                <p class="mexico-partnership__box-title">dLocal</p>
-                                <p class="mexico-partnership__box-sub">Processing</p>
+                            <div class="mexico-architecture__node">
+                                <div class="mexico-architecture__box">
+                                    <p class="mexico-architecture__label">dLocal Infrastructure</p>
+                                </div>
+                                <ul class="mexico-architecture__meta">
+                                    <li>Regional Processing</li>
+                                    <li>KYC Verification</li>
+                                    <li>Settlement</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
