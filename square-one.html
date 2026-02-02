@@ -4,271 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Square One | Isabel Bakhshi</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <h1 class="name">ISABEL BAKHSHI</h1>
-            <p class="title">SENIOR UX CONTENT DESIGNER</p>
-        </div>
-        <nav class="header-right">
-            <a href="index.html">WORK</a>
-            <a href="experience.html">EXPERIENCE</a>
-            <a href="about.html">ABOUT</a>
+<body class="project-page sq1-case-study">
+    <header class="site-header site-header--sticky">
+        <nav class="header-nav ttp-header-nav">
+            <a href="index.html" class="back-to-work">← Back to work</a>
+            <div class="header-nav-right">
+                <a href="experience.html">Experience</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">Menu</button>
+        <nav class="mobile-menu">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <div class="project-section">
-            <div class="project-content">
-                <!-- Company Label -->
-                <div class="project-company">SQUARE</div>
-
-                <!-- Project Title -->
-                <h2 class="project-heading">SQUARE ONE</h2>
-
-                <!-- Hero Image -->
-                <div class="project-hero">
-                    <img src="images/Outage mode/Square One/browser.webp" alt="Square One">
-                </div>
-
-                <!-- Hero Description -->
-                <div class="project-hero-description">
-                    <p>A 0 → 1, ALL-IN-ONE PRODUCT SOLUTION FOR MODERN MICRO BUSINESSES.</p>
-                </div>
-
-                <!-- Two Column Layout -->
-                <div class="project-details-layout">
-                    <!-- Left Column - GIF -->
-                    <div class="project-details-left">
-                        <div class="project-gif">
-                            <img src="images/Outage mode/Square One/CleanShot+2024-06-27+at+11.57.57.gif" alt="Square One animation">
-                        </div>
+        <!-- Hero Section -->
+        <section class="sq1-hero">
+            <div class="sq1-hero__inner">
+                <p class="sq1-hero__company animate-fade">Square</p>
+                <h1 class="sq1-hero__title animate-fade">Square One</h1>
+                <p class="sq1-hero__subtitle animate-fade">A 0 → 1, all-in-one product solution for modern micro businesses.</p>
+                <div class="sq1-hero__meta animate-fade">
+                    <div>
+                        <p class="sq1-meta-label">Role</p>
+                        <p class="sq1-meta-value">Lead Content Designer</p>
                     </div>
-
-                    <!-- Right Column - Project Details -->
-                    <div class="project-details-right">
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">THE PROJECT</h3>
-                            <p>Create a zero-to-one mobile-first product experience for "modern micro" businesses that combines peer-to-peer and card payments, banking, and financial reporting into a single app.</p>
-                        </div>
-
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">MY ROLE</h3>
-                            <ul class="project-role-list">
-                                <li>Lead Content Designer</li>
-                                <li>UX Design</li>
-                                <li>Product Naming</li>
-                            </ul>
-                        </div>
+                    <div>
+                        <p class="sq1-meta-label">Year</p>
+                        <p class="sq1-meta-value">2023</p>
                     </div>
-                </div>
-
-                <!-- MY PROCESS Section -->
-                <div class="project-process-section">
-                    <div class="project-process-layout">
-                        <h3 class="project-process-heading">SQUARE ONE [ALPHA]</h3>
-                        <p class="project-process-intro">Below is a brief discussion of this product and my contributions. For a full case study, <a href="mailto:hello@isabelbakhshi.com">contact me</a>.</p>
-                        
-                        <!-- Context Section -->
-                        <div class="project-communicating-content">
-                            <h4 class="project-process-subheading">CONTEXT</h4>
-                            <p class="project-process-text">With the rise of peer-to-peer payment apps, many businesses have adapted to accept payments any way their buyers want to pay. This creates a fragmented experience when it comes to managing payments and cash flow. We built Square One to address critical pain points for this audience by integrating payments, banking, and money management in one app.</p>
-                        </div>
-                        
-                        <!-- Context Image -->
-                        <div class="venn-diagram-image" style="margin-top: 30px;">
-                            <img src="images/Outage mode/Square One/Frame+1134114767.webp" alt="Context">
-                        </div>
-                        
-                        <!-- Ideal Customer Profile Section -->
-                        <div class="project-communicating-content" style="margin-top: 60px;">
-                            <h4 class="project-process-subheading">IDEAL CUSTOMER PROFILE</h4>
-                            <p class="project-process-text">Through partnering with UX Research, we kicked off by defining our ICP and gaining a deep understanding of the target audience.</p>
-                        </div>
-                        
-                        <!-- Product Strategy Section -->
-                        <div class="project-communicating-content" style="margin-top: 60px;">
-                            <h4 class="project-process-subheading">PRODUCT STRATEGY</h4>
-                            <p class="project-process-text">We spent weeks discussing product strategy and debating whether to launch as a stand-alone app vs. tiering the product as a "mode" of Square.</p>
-                        </div>
-                        
-                        <!-- Design Section -->
-                        <div class="project-communicating-content" style="margin-top: 60px;">
-                            <h4 class="project-process-subheading">DESIGN</h4>
-                            <ul class="project-role-list">
-                                <li>Partnered with product design to build UX flows and adapt the current point-of-sale experience.</li>
-                                <li>Defined product content strategy and value propositions.</li>
-                                <li>Worked with the Banking team to adapt messaging for their features, ensuring expert insights shaped our product's communication.</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Design Images Carousels - Side by Side -->
-                        <div class="design-carousels-wrapper" style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                            <!-- First Carousel -->
-                            <div class="design-carousel-container">
-                                <button class="carousel-btn carousel-prev carousel-1-prev" aria-label="Previous image">←</button>
-                                <div class="design-carousel">
-                                    <div class="design-carousel-track carousel-1-track">
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/Scan+QR-1.webp" alt="Scan QR" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/—-2.webp" alt="Design" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/—-1.webp" alt="Design" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/WEB-3.webp" alt="Web" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/ALTS+(1).webp" alt="Alts" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/Yay.webp" alt="Yay" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-btn carousel-next carousel-1-next" aria-label="Next image">→</button>
-                            </div>
-                            
-                            <!-- Second Carousel -->
-                            <div class="design-carousel-container">
-                                <button class="carousel-btn carousel-prev carousel-2-prev" aria-label="Previous image">←</button>
-                                <div class="design-carousel">
-                                    <div class="design-carousel-track carousel-2-track">
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/More+tab-1.webp" alt="More tab 1" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/More+tab.webp" alt="More tab 2" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/Upgrade-2.webp" alt="Upgrade" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                        <div class="design-carousel-slide">
-                                            <div class="project-localization-image" style="height: 400px;">
-                                                <img src="images/Outage mode/Square One/Keypad.webp" alt="Keypad" style="object-fit: contain; width: 100%; height: 100%;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-btn carousel-next carousel-2-next" aria-label="Next image">→</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Product Naming Section -->
-                        <div class="project-communicating-content" style="margin-top: 60px;">
-                            <h4 class="project-process-subheading">PRODUCT NAMING</h4>
-                            <p class="project-process-text">I facilitated product naming by partnering with creative for R1 brainstorm, leading a wider team brainstorm, and partnering with PMM in overall naming strategy.</p>
-                        </div>
-                        
-                        <!-- Product Naming Image -->
-                        <div class="venn-diagram-image" style="margin-top: 30px;">
-                            <img src="images/Outage mode/Square One/image+316.webp" alt="FigJam group brainstorm">
-                        </div>
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- IMPACT Section -->
-                <div class="project-impact-section">
-                    <div class="project-impact-content">
-                        <h4 class="project-impact-heading">IMPACT</h4>
-                        <p class="project-process-text" style="margin-top: 20px;">Due to the proprietary nature of this work, results will not be shared publicly.</p>
-                    </div>
-                </div>
-
-                <!-- Navigation and Back to Work -->
-                <div class="project-navigation-footer">
-                    <div class="project-back">
-                        <a href="index.html" class="back-link">← Back to Work</a>
-                    </div>
-                    <div class="project-nav-arrows">
-                        <a href="outage-mode.html" class="project-nav-prev">prev</a>
-                        <span class="project-nav-divider">/</span>
-                        <a href="cash-app-square.html" class="project-nav-next">next</a>
+                    <div>
+                        <p class="sq1-meta-label">Scope</p>
+                        <p class="sq1-meta-value">UX Design, Product Naming</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Project Navigation Tiles -->
-        <div class="project-nav-tiles-section">
-            <div class="project-nav-tiles-grid">
-                <a href="tap-to-pay.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Tap to Pay.webp" alt="Tap to Pay on iPhone">
+        </section>
+
+        <!-- Hero Image -->
+        <section class="sq1-hero-image">
+            <div class="ttp-section__inner">
+                <div class="sq1-hero-image__wrap animate-fade">
+                    <img src="images/Outage mode/Square One/browser.webp" alt="Square One - Browser mockup showing landing page">
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="sq1-overview">
+            <div class="ttp-section__inner">
+                <div class="sq1-overview__grid">
+                    <div class="sq1-overview__col animate-fade">
+                        <p class="ttp-eyebrow">The Project</p>
+                        <p class="sq1-overview__text">Create a zero-to-one mobile-first product experience for "micro seller" businesses that combines peer-to-peer payments, banking, and financial reporting into a single app.</p>
                     </div>
-                    <h3 class="project-nav-title">TAP TO PAY ON IPHONE</h3>
-                </a>
-                
-                <a href="outage-mode.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Outage Mode.webp" alt="Outage Mode">
+                    <div class="sq1-overview__col animate-fade">
+                        <p class="ttp-eyebrow">My Role</p>
+                        <ul class="ttp-role-list">
+                            <li><span class="ttp-bullet"></span> Lead Content Designer</li>
+                            <li><span class="ttp-bullet"></span> UX Design</li>
+                            <li><span class="ttp-bullet"></span> Product Naming</li>
+                        </ul>
                     </div>
-                    <h3 class="project-nav-title">OUTAGE MODE</h3>
-                </a>
-                
-                <a href="square-one.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square One.webp" alt="Square One">
+                </div>
+            </div>
+        </section>
+
+        <!-- Context -->
+        <section class="sq1-context">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Context</p>
+                <p class="sq1-context__text animate-fade">With the rise of peer-to-peer payment apps, many businesses have adapted to accept payment any way their buyers want to pay. This creates a fragmented experience when it comes to managing payments and cash flow. We built Square One to address critical pain points for this audience by integrating payments, banking, and money management in one app.</p>
+                <div class="sq1-app-icons animate-fade">
+                    <img src="images/Square One/ZELLEVENMO.png" alt="Payment app icons - Zelle, Venmo" class="sq1-context-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Manifesto -->
+        <section class="ttp-manifesto sq1-manifesto">
+            <div class="ttp-section__inner ttp-section__narrow">
+                <p class="ttp-manifesto__text animate-fade">One app to accept payments, manage money, and grow your business.</p>
+            </div>
+        </section>
+
+        <!-- Process Sections -->
+        <section class="sq1-process">
+            <div class="ttp-section__inner">
+                <div class="sq1-process__item animate-fade">
+                    <p class="ttp-eyebrow">Ideal Customer Profile</p>
+                    <p class="sq1-process__text">Through partnering with UX Research, we kicked off by defining our ICP and gaining a deep understanding of the target audience.</p>
+                </div>
+                <div class="sq1-process__item animate-fade">
+                    <p class="ttp-eyebrow">Product Strategy</p>
+                    <p class="sq1-process__text">We spent weeks discussing product strategy and debating whether to launch as a stand-alone app vs. tiering the product as a "mode" of Square.</p>
+                </div>
+                <div class="sq1-process__item animate-fade">
+                    <p class="ttp-eyebrow">Design</p>
+                    <ul class="sq1-process__list">
+                        <li>Partnered with product design to build UX flows and adapt the current point-of-sale experience.</li>
+                        <li>Defined product content strategy and value propositions.</li>
+                        <li>Worked with the Banking team to adapt messaging for their features, ensuring expert insights shaped our product's communication.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content in Context -->
+        <section class="sq1-content">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Content in Context</p>
+                <div class="sq1-content__grid">
+                    <div class="sq1-content__item animate-fade">
+                        <div class="sq1-content__placeholder">QR Payment Screen</div>
+                        <p class="sq1-content__label">Accepting payments via QR code</p>
                     </div>
-                    <h3 class="project-nav-title">SQUARE ONE</h3>
-                </a>
-                
-                <a href="cash-app-square.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Cash App + Square.webp" alt="Cash App Square">
+                    <div class="sq1-content__item animate-fade">
+                        <div class="sq1-content__placeholder">Welcome Dashboard</div>
+                        <p class="sq1-content__label">Personalized home screen with quick actions</p>
                     </div>
-                    <h3 class="project-nav-title">CASH APP 🤝 SQUARE</h3>
-                </a>
-                
-                <a href="square-strategist.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square Strategist AI.webp" alt="AI-Generated Business Insights">
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Naming -->
+        <section class="sq1-naming">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Product Naming</p>
+                <p class="sq1-naming__text animate-fade">I facilitated product naming by partnering with creative for R1 brainstorm, leading a wider team brainstorm, and partnering with PMM in overall naming strategy.</p>
+                <div class="sq1-naming__image-box animate-fade">
+                    <div class="sq1-naming__image-wrap">
+                        <img src="images/Outage mode/Square One/image+316.webp" alt="FigJam group brainstorm">
                     </div>
-                    <h3 class="project-nav-title">AI-GENERATED BUSINESS INSIGHTS</h3>
-                </a>
-                
-                <a href="ai-item-library.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/AI Library.webp" alt="AI Item Library Generator">
+                    <p class="sq1-naming__caption">FigJam brainstorming workshop flow</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="ttp-reflection sq1-impact">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow ttp-eyebrow--light animate-fade">Impact</p>
+                <p class="sq1-impact__text animate-fade">Due to the proprietary nature of this work, results will not be shared publicly.</p>
+                <p class="sq1-impact__contact animate-fade">For a full case study, please <a href="mailto:hello@isabelbakhshi.com">contact me</a>.</p>
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section class="ttp-next">
+            <div class="ttp-section__inner">
+                <a href="cash-app-square.html" class="ttp-next__link">
+                    <div>
+                        <p class="ttp-eyebrow">Next Project</p>
+                        <p class="ttp-next__title">Cash App x Square</p>
                     </div>
-                    <h3 class="project-nav-title">AI ITEM LIBRARY GENERATOR</h3>
+                    <span class="ttp-next__arrow" aria-hidden="true">↗</span>
                 </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <a href="https://www.linkedin.com/in/isabelhb/" target="_blank" class="linkedin-link">in</a>
+    <footer id="contact" class="site-footer">
+        <div class="footer-gradient" aria-hidden="true"></div>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h2 class="footer-heading">Let's talk.</h2>
+                    <p class="footer-intro">I'm always open to discussing new projects, content strategy challenges, or opportunities to collaborate.</p>
+                    <nav class="footer-links">
+                        <a href="https://linkedin.com/in/isabelbakhshi" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="#" class="footer-link" id="resume-link" target="_blank" rel="noopener">Resume<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="mailto:hello@isabelbakhshi.com" class="footer-link">Email<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                    </nav>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-role">Senior Content Designer</p>
+                    <p class="footer-location">Based in New York City</p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span class="footer-name">Isabel Bakhshi</span>
+                <span class="footer-year">2026</span>
+            </div>
         </div>
     </footer>
 

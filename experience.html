@@ -4,81 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience | Isabel Bakhshi</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <h1 class="name">ISABEL BAKHSHI</h1>
-            <p class="title">SENIOR UX CONTENT DESIGNER</p>
-        </div>
-        <nav class="header-right">
-            <a href="index.html">WORK</a>
-            <a href="experience.html">EXPERIENCE</a>
-            <a href="about.html">ABOUT</a>
+<body class="experience-page">
+    <header class="site-header site-header--sticky">
+        <nav class="header-nav">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">Menu</button>
+        <nav class="mobile-menu">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <div class="experience-section">
-            <div class="experience-content">
-                <!-- Page headline / framing -->
-                <h2 class="experience-heading">Experience</h2>
-                <p class="experience-intro">
-                    I've worked across complex products and systems, creating UX content that guides users through high-stakes experiences. My background in program management shapes how I approach content: strategically, collaboratively, and with a focus on clarity and usability.
-                </p>
-
-                <div class="divider"></div>
-
-                <!-- Role 1 -->
-                <div class="experience-role">
-                    <div class="role-date">JAN 2026 – PRESENT</div>
-                    <div class="role-title">FREELANCE CONTENT DESIGNER · SELF-DIRECTED</div>
-                    <p class="role-description">
-                        Exploring personal projects and freelance opportunities.
-                    </p>
-                </div>
-
-                <!-- Role 2 -->
-                <div class="experience-role">
-                    <div class="role-date">JUN 2024 – DEC 2025</div>
-                    <div class="role-title">SR UX CONTENT DESIGNER · BLOCK, INC.</div>
-                    <p class="role-description">
-                        Led UX content strategy for Square's expansion into new markets and technically complex initiatives, creating scalable systems and flows.
-                    </p>
-                </div>
-
-                <!-- Role 3 -->
-                <div class="experience-role">
-                    <div class="role-date">FEB 2022 – SEP 2024</div>
-                    <div class="role-title">UX CONTENT DESIGNER · BLOCK, INC.</div>
-                    <p class="role-description">
-                        Shaped product language and system states for flagship payments features and zero-to-one integrated financial experiences.
-                    </p>
-                </div>
-
-                <!-- Role 4 -->
-                <div class="experience-role">
-                    <div class="role-date">NOV 2017 – JAN 2021</div>
-                    <div class="role-title">PROGRAM MANAGER · BLOCK, INC.</div>
-                    <p class="role-description">
-                        Delivered operational strategy for regulated banking and lending products, enabling launches at scale with cross-functional alignment.
-                    </p>
-                </div>
-
+        <!-- Hero Section -->
+        <section class="exp-hero">
+            <div class="exp-hero__inner">
+                <p class="exp-hero__eyebrow">Experience</p>
+                <h1 class="exp-hero__headline">Building clarity<br><span class="italic">at scale</span>.</h1>
             </div>
-        </div>
-    </main>
+        </section>
 
-    <footer>
-        <div class="footer-content">
-            <p class="footer-text">Available for select freelance and contract work · <a href="mailto:hello@isabelbakhshi.com">hello@isabelbakhshi.com</a></p>
-            <a href="https://www.linkedin.com/in/isabelhb/" target="_blank" class="linkedin-link">in</a>
-        </div>
-    </footer>
+        <!-- Intro Statement (scroll-based opacity) -->
+        <section class="exp-intro" id="exp-intro">
+            <div class="exp-intro__inner">
+                <p class="exp-intro__text" id="exp-intro-text">I've worked across complex products and systems, creating UX content that guides users through high-stakes experiences. My background in program management shapes how I approach content: strategically, collaboratively, and with a focus on clarity and&nbsp;<span class="no-break">usability</span>.</p>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="exp-timeline">
+            <div class="exp-timeline__inner">
+                <div class="exp-timeline__list">
+                    <div class="exp-timeline__item animate-fade">
+                        <div class="exp-timeline__period">Jan 2026 — Present</div>
+                        <div class="exp-timeline__role-block">
+                            <h3 class="exp-timeline__role">Freelance Content Designer</h3>
+                            <p class="exp-timeline__company">Self-Directed</p>
+                        </div>
+                        <p class="exp-timeline__desc">Exploring personal projects and freelance opportunities.</p>
+                    </div>
+                    <div class="exp-timeline__item animate-fade">
+                        <div class="exp-timeline__period">Jun 2024 — Dec 2025</div>
+                        <div class="exp-timeline__role-block">
+                            <h3 class="exp-timeline__role">Sr UX Content Designer</h3>
+                            <p class="exp-timeline__company">Block, Inc.</p>
+                        </div>
+                        <p class="exp-timeline__desc">Led UX content strategy for Square's expansion into new markets and technically complex initiatives, creating scalable systems and flows.</p>
+                    </div>
+                    <div class="exp-timeline__item animate-fade">
+                        <div class="exp-timeline__period">Feb 2022 — Sep 2024</div>
+                        <div class="exp-timeline__role-block">
+                            <h3 class="exp-timeline__role">UX Content Designer</h3>
+                            <p class="exp-timeline__company">Block, Inc.</p>
+                        </div>
+                        <p class="exp-timeline__desc">Shaped product language and system states for flagship payments features and zero-to-one integrated financial experiences.</p>
+                    </div>
+                    <div class="exp-timeline__item animate-fade">
+                        <div class="exp-timeline__period">Nov 2017 — Jan 2021</div>
+                        <div class="exp-timeline__role-block">
+                            <h3 class="exp-timeline__role">Program Manager</h3>
+                            <p class="exp-timeline__company">Block, Inc.</p>
+                        </div>
+                        <p class="exp-timeline__desc">Delivered operational strategy for regulated banking and lending products, enabling launches at scale with cross-functional alignment.</p>
+                    </div>
+                </div>
+                <div class="exp-timeline__divider"></div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="exp-skills">
+            <div class="exp-skills__inner">
+                <p class="exp-skills__eyebrow">What I Do</p>
+                <div class="exp-skills__grid">
+                    <div class="exp-skills__item animate-fade">UX Writing</div>
+                    <div class="exp-skills__item animate-fade">Content Strategy</div>
+                    <div class="exp-skills__item animate-fade">Design Systems</div>
+                    <div class="exp-skills__item animate-fade">Product Naming</div>
+                    <div class="exp-skills__item animate-fade">Microcopy</div>
+                    <div class="exp-skills__item animate-fade">Voice & Tone</div>
+                    <div class="exp-skills__item animate-fade">Information Architecture</div>
+                    <div class="exp-skills__item animate-fade">Localization</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="site-footer exp-footer">
+            <div class="footer-gradient" aria-hidden="true"></div>
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <h2 class="footer-heading">Let's talk.</h2>
+                        <p class="footer-intro">Available for select freelance and contract work.</p>
+                        <nav class="footer-links">
+                            <a href="https://linkedin.com/in/isabelbakhshi" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                            <a href="#" class="footer-link" id="resume-link" target="_blank" rel="noopener">Resume<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                            <a href="mailto:hello@isabelbakhshi.com" class="footer-link">Email<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        </nav>
+                    </div>
+                    <div class="footer-right">
+                        <p class="footer-role">Senior UX Content Designer</p>
+                        <p class="footer-location">Available for freelance</p>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <span class="footer-name">Isabel Bakhshi</span>
+                    <span class="footer-year">2026</span>
+                </div>
+            </div>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>

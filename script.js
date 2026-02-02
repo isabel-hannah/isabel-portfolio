@@ -1,63 +1,278 @@
-// Always land on header when loading homepage (no scroll to #work)
+// Custom cursor - dot (default) and ring (on clickable)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersFinePointer = window.matchMedia('(pointer: fine)').matches;
+if (prefersFinePointer && !prefersReducedMotion) {
+    document.body.classList.add('has-custom-cursor');
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    cursor.innerHTML = '<span class="cursor-dot"></span><span class="cursor-ring"></span>';
+    document.body.appendChild(cursor);
+
+    const dot = cursor.querySelector('.cursor-dot');
+    const ring = cursor.querySelector('.cursor-ring');
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animate() {
+        ringX += (mouseX - ringX) * 0.15;
+        ringY += (mouseY - ringY) * 0.15;
+        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    const clickables = document.querySelectorAll('a, button, [role="button"], input[type="submit"], .tonal-break__card');
+    clickables.forEach((el) => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('is-over-clickable'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('is-over-clickable'));
+    });
+
+    document.addEventListener('mouseleave', () => cursor.classList.add('is-hidden'));
+    document.addEventListener('mouseenter', () => cursor.classList.remove('is-hidden'));
+}
+
+// Land on top when loading homepage
 const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '';
 if (isHomePage) {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
 }
 
-// Typewriter effect on home page header (index only)
-const typedTitleEl = document.getElementById('typed-title');
-if (typedTitleEl && isHomePage) {
-    const fullText = 'SENIOR UX CONTENT DESIGNER';
-    const typingSpeed = 85;
-    const startDelay = 500;
+// Homepage showcase - clip-path reveal + parallax
+const showcaseContainer = document.querySelector('[data-showcase-container]');
+const showcaseCards = document.querySelectorAll('.showcase__card');
+if (showcaseContainer && showcaseCards.length && isHomePage) {
+    const yRanges = [[100, -100], [150, -150], [80, -80]];
+    const prefReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    let charIndex = 0;
-
-    function typeChar() {
-        if (charIndex < fullText.length) {
-            typedTitleEl.textContent += fullText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeChar, typingSpeed);
-        }
+    if (!prefReduce && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in-view');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+        showcaseCards.forEach((c) => io.observe(c));
+    } else {
+        showcaseCards.forEach((c) => c.classList.add('in-view'));
     }
 
-    setTimeout(typeChar, startDelay);
+    if (!prefReduce) {
+        let rafId = null;
+        function updateShowcaseParallax() {
+            const rect = showcaseContainer.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const sh = rect.height;
+            const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + sh)));
+
+            showcaseCards.forEach((card, i) => {
+                const [start, end] = yRanges[i] || [0, 0];
+                const y = start + (end - start) * progress;
+                card.style.transform = `translateY(${y}px)`;
+            });
+        }
+        function onScroll() {
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                updateShowcaseParallax();
+                rafId = null;
+            });
+        }
+        updateShowcaseParallax();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+    }
 }
 
-// Scroll-triggered reveals (Intersection Observer)
-const revealTargets = document.querySelectorAll('.work-section-header, .work-item');
-if (revealTargets.length && 'IntersectionObserver' in window) {
-    const reveal = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-            if (e.isIntersecting) {
-                e.target.classList.add('in-view');
-                reveal.unobserve(e.target);
-            }
-        });
-    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
-    revealTargets.forEach((el) => reveal.observe(el));
+// Features section - cycling animations (Clarity, Voice, Systems)
+if (isHomePage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const clarityText = document.getElementById('clarity-text');
+    const clarityTexts = ['Click here to continue', 'Continue', 'Next'];
+    if (clarityText) {
+        let cIdx = 0;
+        setInterval(() => {
+            cIdx = (cIdx + 1) % clarityTexts.length;
+            clarityText.style.opacity = '0';
+            clarityText.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                clarityText.textContent = clarityTexts[cIdx];
+                clarityText.style.opacity = '1';
+                clarityText.style.transform = 'scale(1)';
+            }, 150);
+        }, 2000);
+    }
+
+    const voiceText = document.getElementById('voice-text');
+    const voiceTone = document.getElementById('voice-tone');
+    const voiceMessages = [
+        { text: 'Your payment was successful!', tone: 'Friendly' },
+        { text: 'Transaction completed.', tone: 'Professional' },
+        { text: "Done! You're all set.", tone: 'Casual' }
+    ];
+    if (voiceText && voiceTone) {
+        let vIdx = 0;
+        setInterval(() => {
+            vIdx = (vIdx + 1) % 3;
+            voiceText.style.opacity = '0';
+            voiceText.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                voiceText.textContent = voiceMessages[vIdx].text;
+                voiceTone.textContent = voiceMessages[vIdx].tone;
+                voiceText.style.opacity = '1';
+                voiceText.style.transform = 'translateY(0)';
+            }, 200);
+        }, 2500);
+    }
+
+    const systemLabel = document.getElementById('system-label');
+    const systemDots = document.querySelectorAll('.features__dot-item');
+    const systemLabels = ['Button', 'Modal', 'Error', 'Toast'];
+    if (systemLabel && systemDots.length === 4) {
+        let sIdx = 0;
+        systemDots[0].classList.add('active');
+        setInterval(() => {
+            sIdx = (sIdx + 1) % 4;
+            systemDots.forEach((d, i) => d.classList.toggle('active', i === sIdx));
+            systemLabel.style.opacity = '0';
+            setTimeout(() => {
+                systemLabel.textContent = systemLabels[sIdx];
+                systemLabel.style.opacity = '1';
+            }, 150);
+        }, 1500);
+    }
 }
 
-// 3D tilt on hover (ad-agency style) – skip when user prefers reduced motion
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!prefersReducedMotion) {
-    document.querySelectorAll('.work-item[data-tilt]').forEach((card) => {
-        const tilt = 6;
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width;
-            const y = (e.clientY - rect.top) / rect.height;
-            const rx = (y - 0.5) * -tilt;
-            const ry = (x - 0.5) * tilt;
-            card.style.setProperty('--tilt-x', rx + 'deg');
-            card.style.setProperty('--tilt-y', ry + 'deg');
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.setProperty('--tilt-x', '0deg');
-            card.style.setProperty('--tilt-y', '0deg');
-        });
+// Slow fade-ins on scroll (home + about pages)
+const isAboutPage = document.body.classList.contains('about-page');
+const fadeEls = document.querySelectorAll('.animate-fade');
+if (fadeEls.length) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        fadeEls.forEach((el) => el.classList.add('in-view'));
+    } else {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in-view');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+        fadeEls.forEach((el) => observer.observe(el));
+    }
+}
+
+// About page - Hero image entrance
+if (document.body.classList.contains('about-page')) {
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => document.body.classList.add('hero-loaded'));
     });
+}
+
+// About page - Philosophy scroll-triggered opacity reveal (Framer Motion-style)
+// Offset ["start 0.9", "start 0.3"]: progress 0 when element top at 90% viewport, progress 1 at 30%
+// Opacity maps from 0.15 to 1 over scroll progress
+const philosophyReveal = document.getElementById('philosophy-reveal');
+const philosophyTarget = document.getElementById('philosophy-scroll-target');
+if (philosophyReveal && philosophyTarget) {
+    const text = "Language is the bridge between technology and people.";
+    const parts = text.split(' ');
+    const line1 = parts.slice(0, 5).join(' ');
+    const line2 = parts.slice(5).join(' ');
+
+    function wrapChars(str) {
+        return Array.from(str).map(c => {
+            const span = document.createElement('span');
+            span.className = 'philosophy-char';
+            span.textContent = c;
+            span.style.opacity = '0.15';
+            return span;
+        });
+    }
+
+    philosophyReveal.innerHTML = '';
+    wrapChars(line1 + ' ').forEach(s => philosophyReveal.appendChild(s));
+    philosophyReveal.appendChild(document.createElement('br'));
+    wrapChars(line2).forEach(s => philosophyReveal.appendChild(s));
+
+    const chars = philosophyReveal.querySelectorAll('.philosophy-char');
+    const stagger = 0.018;
+    const windowSize = 0.1;
+
+    const prefReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefReduce) {
+        chars.forEach(c => c.style.opacity = '1');
+    } else {
+        let rafId = null;
+        function updatePhilosophyOpacity() {
+            const rect = philosophyTarget.getBoundingClientRect();
+            const vh = window.innerHeight;
+            // start 0.9 -> start 0.3: progress 0 when top at 0.9*vh, progress 1 when top at 0.3*vh
+            // useScroll offset ["start 0.9", "start 0.3"]: progress 0 at 90% viewport, 1 at 30%
+            const progress = Math.max(0, Math.min(1, (1.0 * vh - rect.top) / (1.0 * vh)));
+            // useTransform(scrollYProgress, [0, 1], [0.15, 1])
+            chars.forEach((char, i) => {
+                const charProgress = Math.max(0, Math.min(1, (progress - i * stagger) / windowSize));
+                const opacity = 0.15 + 0.85 * charProgress;
+                char.style.opacity = String(opacity);
+            });
+        }
+        function onScroll() {
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                updatePhilosophyOpacity();
+                rafId = null;
+            });
+        }
+        updatePhilosophyOpacity();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+    }
+}
+
+// Experience page - Intro scroll-based opacity
+// Maps scroll progress [0, 0.3, 0.7, 1] to opacity [0.15, 1, 1, 0.15]
+const expIntroSection = document.getElementById('exp-intro');
+const expIntroText = document.getElementById('exp-intro-text');
+if (expIntroSection && expIntroText) {
+    const prefReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefReduce) {
+        expIntroText.style.opacity = '1';
+    } else {
+        function mapProgressToOpacity(p) {
+            if (p <= 0.3) return 0.15 + (0.85 * (p / 0.3));
+            if (p <= 0.7) return 1;
+            return 1 - (0.85 * ((p - 0.7) / 0.3));
+        }
+        let rafId = null;
+        function updateExpIntroOpacity() {
+            const rect = expIntroSection.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const sh = rect.height;
+            const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + sh)));
+            expIntroText.style.opacity = String(mapProgressToOpacity(progress));
+        }
+        function onExpScroll() {
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                updateExpIntroOpacity();
+                rafId = null;
+            });
+        }
+        updateExpIntroOpacity();
+        window.addEventListener('scroll', onExpScroll, { passive: true });
+        window.addEventListener('resize', onExpScroll);
+    }
 }
 
 // Smooth scrolling for navigation links

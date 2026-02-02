@@ -4,184 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Item Library Generator | Isabel Bakhshi</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <h1 class="name">ISABEL BAKHSHI</h1>
-            <p class="title">SENIOR UX CONTENT DESIGNER</p>
-        </div>
-        <nav class="header-right">
-            <a href="index.html">WORK</a>
-            <a href="experience.html">EXPERIENCE</a>
-            <a href="about.html">ABOUT</a>
+<body class="project-page ailibrary-case-study">
+    <header class="site-header site-header--sticky">
+        <nav class="header-nav ttp-header-nav">
+            <a href="index.html" class="back-to-work">← Back to work</a>
+            <div class="header-nav-right">
+                <a href="experience.html">Experience</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">Menu</button>
+        <nav class="mobile-menu">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <div class="project-section">
-            <div class="project-content">
-                <!-- Company Label -->
-                <div class="project-company">SQUARE</div>
-
-                <!-- Project Title -->
-                <h2 class="project-heading">AI ITEM LIBRARY GENERATOR</h2>
-
-                <!-- Hero Image -->
-                <div class="project-hero">
-                    <img src="images/AI Item Library/Frame+42153320+(4).webp" alt="AI Item Library Generator">
+        <!-- Hero -->
+        <section class="ailibrary-hero">
+            <div class="ailibrary-hero__inner">
+                <p class="ailibrary-hero__company animate-fade">Square, Block Inc.</p>
+                <h1 class="ailibrary-hero__title animate-fade">AI Item Library Generator</h1>
+                <div class="ailibrary-hero__image animate-fade">
+                    <img src="images/AI%20Item%20Library/Frame+42153320+(4).webp" alt="AI Item Library Generator - item grid">
                 </div>
-
-                <!-- Divider Line -->
-                <div class="project-process-divider" style="margin: 40px 0;"></div>
-
-                <!-- Two Column Layout -->
-                <div class="project-details-layout" style="grid-template-columns: 0.8fr 1.2fr;">
-                    <!-- Left Column - Image -->
-                    <div class="project-details-left">
-                        <div class="project-image">
-                            <img src="images/AI Item Library/Auto+Layout+Vertical.webp" alt="AI Item Library" style="max-width: 100%; width: 100%;">
+                <div class="ailibrary-hero__grid">
+                    <div class="ailibrary-hero__feature animate-fade">
+                        <div class="ailibrary-hero__feature-visual">
+                            <img src="images/AI%20Item%20Library/Auto+Layout+Vertical.webp" alt="AI-generated item library preview">
                         </div>
                     </div>
-
-                    <!-- Right Column - Project Details -->
-                    <div class="project-details-right">
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">THE PROJECT</h3>
-                            <p>Using the power of generative AI, create a service that generates a personalized, starter item library that a seller can adopt in one click.</p>
+                    <div class="ailibrary-hero__info animate-fade">
+                        <div class="ailibrary-hero__block">
+                            <p class="ttp-eyebrow">The Project</p>
+                            <p class="ailibrary-hero__text">Using the power of generative AI, create a service that generates a personalized, starter item library that a seller can adopt in one click.</p>
                         </div>
-
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">MY ROLE</h3>
-                            <ul class="project-role-list">
-                                <li>Lead Content Designer</li>
-                                <li>UX Writing</li>
+                        <div class="ailibrary-hero__block">
+                            <p class="ttp-eyebrow">My Role</p>
+                            <ul class="ttp-role-list">
+                                <li><span class="ttp-bullet"></span> Lead Content Designer</li>
+                                <li><span class="ttp-bullet"></span> UX Writing</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Work Sample Section -->
-                <div class="project-process-section">
-                    <div class="project-process-layout">
-                        <p class="project-process-intro">A sample of my work can be found below. For a full case study of this project, <a href="mailto:hello@isabelbakhshi.com">contact me</a>.</p>
-                        
-                        <!-- Work Sample Carousel -->
-                        <div class="design-carousel-container" style="margin-top: 40px;">
-                            <button class="carousel-btn carousel-prev carousel-library-prev" aria-label="Previous image">←</button>
-                            <div class="design-carousel">
-                                <div class="design-carousel-track carousel-library-track">
-                                    <div class="design-carousel-slide">
-                                        <div class="project-localization-image" style="padding: 20px; margin: 0; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                            <img src="images/AI Item Library/Default (2).webp" alt="Default" style="max-width: 90%; max-height: 700px; width: auto; height: auto; display: block; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                    <div class="design-carousel-slide">
-                                        <div class="project-localization-image" style="padding: 20px; margin: 0; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                            <img src="images/AI Item Library/Default (1).webp" alt="Default" style="max-width: 90%; max-height: 700px; width: auto; height: auto; display: block; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                    <div class="design-carousel-slide">
-                                        <div class="project-localization-image" style="padding: 20px; margin: 0; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                            <img src="images/AI Item Library/Generating.webp" alt="Generating" style="max-width: 90%; max-height: 700px; width: auto; height: auto; display: block; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                    <div class="design-carousel-slide">
-                                        <div class="project-localization-image" style="padding: 20px; margin: 0; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                            <img src="images/AI Item Library/Generated.webp" alt="Generated" style="max-width: 90%; max-height: 700px; width: auto; height: auto; display: block; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                    <div class="design-carousel-slide">
-                                        <div class="project-localization-image" style="padding: 20px; margin: 0; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                            <img src="images/AI Item Library/Download+app.webp" alt="Download app" style="max-width: 90%; max-height: 700px; width: auto; height: auto; display: block; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                    <div class="design-carousel-slide">
-                                        <div class="project-localization-image" style="padding: 20px; margin: 0; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                            <img src="images/AI Item Library/Import+success+toast (1).webp" alt="Import success toast" style="max-width: 90%; max-height: 700px; width: auto; height: auto; display: block; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                    <div class="design-carousel-slide">
-                                        <div class="project-localization-image" style="padding: 20px; margin: 0; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                            <img src="images/AI Item Library/Undo+banner.webp" alt="Undo banner" style="max-width: 90%; max-height: 700px; width: auto; height: auto; display: block; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-btn carousel-next carousel-library-next" aria-label="Next image">→</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation and Back to Work -->
-                <div class="project-navigation-footer">
-                    <div class="project-back">
-                        <a href="index.html" class="back-link">← Back to Work</a>
-                    </div>
-                    <div class="project-nav-arrows">
-                        <a href="square-strategist.html" class="project-nav-prev">prev</a>
-                        <span class="project-nav-divider">/</span>
-                        <a href="#" class="project-nav-next">next</a>
-                    </div>
+        <!-- Sample Work -->
+        <section class="ailibrary-sample">
+            <div class="ttp-section__inner">
+                <p class="ailibrary-sample__intro animate-fade">A sample of my work can be found below. For a full case study of this project, <a href="mailto:hello@isabelbakhshi.com">contact me</a>.</p>
+                <div class="ailibrary-sample__image-wrap">
+                    <img src="images/AI%20Item%20Library/Default%20(2).webp" alt="AI Item Library - default state">
                 </div>
             </div>
-        </div>
-        
-        <!-- Project Navigation Tiles -->
-        <div class="project-nav-tiles-section">
-            <div class="project-nav-tiles-grid">
-                <a href="tap-to-pay.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Tap to Pay.webp" alt="Tap to Pay on iPhone">
+        </section>
+
+        <!-- Next Project -->
+        <section class="ttp-next">
+            <div class="ttp-section__inner">
+                <a href="tap-to-pay.html" class="ttp-next__link">
+                    <div>
+                        <p class="ttp-eyebrow">Next Project</p>
+                        <p class="ttp-next__title">Tap to Pay on iPhone</p>
                     </div>
-                    <h3 class="project-nav-title">TAP TO PAY ON IPHONE</h3>
-                </a>
-                
-                <a href="outage-mode.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Outage Mode.webp" alt="Outage Mode">
-                    </div>
-                    <h3 class="project-nav-title">OUTAGE MODE</h3>
-                </a>
-                
-                <a href="square-one.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square One.webp" alt="Square One">
-                    </div>
-                    <h3 class="project-nav-title">SQUARE ONE</h3>
-                </a>
-                
-                <a href="cash-app-square.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Cash App + Square.webp" alt="Cash App Square">
-                    </div>
-                    <h3 class="project-nav-title">CASH APP 🤝 SQUARE</h3>
-                </a>
-                
-                <a href="square-strategist.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square Strategist AI.webp" alt="AI-Generated Business Insights">
-                    </div>
-                    <h3 class="project-nav-title">AI-GENERATED BUSINESS INSIGHTS</h3>
-                </a>
-                
-                <a href="ai-item-library.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/AI Library.webp" alt="AI Item Library Generator">
-                    </div>
-                    <h3 class="project-nav-title">AI ITEM LIBRARY GENERATOR</h3>
+                    <span class="ttp-next__arrow" aria-hidden="true">↗</span>
                 </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <a href="https://www.linkedin.com/in/isabelhb/" target="_blank" class="linkedin-link">in</a>
+    <footer id="contact" class="site-footer">
+        <div class="footer-gradient" aria-hidden="true"></div>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h2 class="footer-heading">Let's talk.</h2>
+                    <p class="footer-intro">I'm always open to discussing new projects, content strategy challenges, or opportunities to collaborate.</p>
+                    <nav class="footer-links">
+                        <a href="https://linkedin.com/in/isabelbakhshi" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="#" class="footer-link" id="resume-link" target="_blank" rel="noopener">Resume<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="mailto:hello@isabelbakhshi.com" class="footer-link">Email<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                    </nav>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-role">Senior Content Designer</p>
+                    <p class="footer-location">Based in New York City</p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span class="footer-name">Isabel Bakhshi</span>
+                <span class="footer-year">2026</span>
+            </div>
         </div>
     </footer>
 

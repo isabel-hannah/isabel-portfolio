@@ -4,256 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outage Mode | Isabel Bakhshi</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div class="header-left">
-            <h1 class="name">ISABEL BAKHSHI</h1>
-            <p class="title">SENIOR UX CONTENT DESIGNER</p>
-        </div>
-        <nav class="header-right">
-            <a href="index.html">WORK</a>
-            <a href="experience.html">EXPERIENCE</a>
-            <a href="about.html">ABOUT</a>
+<body class="project-page om-case-study">
+    <header class="site-header site-header--sticky">
+        <nav class="header-nav ttp-header-nav">
+            <a href="index.html" class="back-to-work">← Back to work</a>
+            <div class="header-nav-right">
+                <a href="experience.html">Experience</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">Menu</button>
+        <nav class="mobile-menu">
+            <a href="index.html">Work</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <div class="project-section">
-            <div class="project-content">
-                <!-- Company Label -->
-                <div class="project-company">SQUARE</div>
-
-                <!-- Project Title -->
-                <h2 class="project-heading">OUTAGE MODE</h2>
-
-                <!-- Hero Image -->
-                <div class="project-hero">
-                    <img src="images/Outage mode/85708.webp" alt="Outage Mode">
-                </div>
-
-                <!-- Hero Description -->
-                <div class="project-hero-description">
-                    <p>A CRITICAL FALLBACK FEATURE FOR WHEN PAYMENT SERVICES ARE DISRUPTED.</p>
-                </div>
-
-                <!-- Two Column Layout -->
-                <div class="project-details-layout" style="grid-template-columns: 0.5fr 1.5fr;">
-                    <!-- Left Column - GIF -->
-                    <div class="project-details-left">
-                        <div class="project-gif">
-                            <img src="images/Outage mode/outage+mode+gif.gif" alt="Outage Mode animation" style="max-width: 350px; width: 100%;">
-                        </div>
-                    </div>
-
-                    <!-- Right Column - Project Details -->
-                    <div class="project-details-right">
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">THE PROJECT</h3>
-                            <p>Design an experience that shifts sellers who are being impacted by a Square service outage into offline mode so they can continue taking payments with minimal disruption until the issue is resolved.</p>
-                        </div>
-
-                        <div class="project-detail-section">
-                            <h3 class="project-detail-heading">MY ROLE</h3>
-                            <ul class="project-role-list">
-                                <li>Lead UX Designer</li>
-                                <li>Lead Content Designer</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MY PROCESS Section -->
-                <div class="project-process-section">
-                    <div class="project-process-layout">
-                        <h3 class="project-process-heading">MY PROCESS</h3>
-                        <p class="project-process-intro">Key parts of my process and a sample of my work can be found below. For a full case study, <a href="mailto:hello@isabelbakhshi.com">contact me</a>.</p>
-                        
-                        <!-- Understand the Journey Section -->
-                        <div class="project-communicating-content">
-                            <h4 class="project-process-subheading">UNDERSTAND THE JOURNEY</h4>
-                            <p class="project-process-text">I used a user journey map to pinpoint areas for improvement and discovered that users were attempting to leverage offline mode during outages.</p>
-                        </div>
-                        
-                        <!-- Journey Image - Full Width -->
-                        <div class="venn-diagram-image" style="margin-top: 30px;">
-                            <img src="images/Outage mode/Frame+1.webp" alt="User journey map">
-                        </div>
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- CONDUCT AN AUDIT Section -->
-                <div class="project-designing-section">
-                    <div class="project-communicating-content">
-                        <h4 class="project-designing-heading">CONDUCT AN AUDIT</h4>
-                        <p class="project-designing-text">I audited the offline experience to identify improvements for outages and reviewed competitor offline flows to gain deeper insights into industry standards.</p>
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- DESIGN THE SOLUTION Section -->
-                <div class="project-designing-section">
-                    <div class="project-communicating-content">
-                        <h4 class="project-designing-heading">DESIGN THE SOLUTION</h4>
-                    </div>
-                    
-                    <!-- MAP OUT THE USER FLOW - Side by Side Layout -->
-                    <div class="project-process-audience-layout">
-                        <!-- Left Column - Text -->
-                        <div class="project-process-audience-left">
-                            <h5 class="project-process-subheading">MAP OUT THE USER FLOW</h5>
-                            <p class="project-process-text">Intentional and thoughtful flow of information was the focal point of the experience. To build the UX, I created a flowchart by considering possible variants and technical feasibility.</p>
-                        </div>
-                        
-                        <!-- Right Column - Image -->
-                        <div class="project-process-audience-right">
-                            <div class="venn-diagram-image">
-                                <img src="images/Outage mode/Untitled.webp" alt="User flow flowchart">
+        <!-- Hero Section -->
+        <section class="om-hero">
+            <div class="om-hero__inner">
+                <div class="om-hero__grid">
+                    <div class="om-hero__text">
+                        <p class="om-hero__company animate-fade">Square, Block Inc.</p>
+                        <h1 class="om-hero__title animate-fade">Outage <em>Mode</em></h1>
+                        <p class="om-hero__subtitle animate-fade">A critical fallback feature for when payment services are disrupted.</p>
+                        <div class="om-hero__meta animate-fade">
+                            <div>
+                                <p class="om-meta-label">Role</p>
+                                <p class="om-meta-value">Senior UX Content Designer</p>
+                            </div>
+                            <div>
+                                <p class="om-meta-label">Year</p>
+                                <p class="om-meta-value">2024</p>
+                            </div>
+                            <div>
+                                <p class="om-meta-label">Duration</p>
+                                <p class="om-meta-value">10 months</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- PARTNER WITH PRODUCT DESIGN Subsection -->
-                    <div class="project-communicating-content" style="margin-top: 60px;">
-                        <h5 class="project-feature-tour-heading">PARTNER WITH PRODUCT DESIGN</h5>
-                        <p class="project-feature-tour-text">I partnered with product design to nail down content and determine UI, such as banner placements and color, modal layouts, and determining the right amount of friction. We went through several rounds of iterations until landing on our final solution. See below for design explorations.</p>
+                    <div class="om-hero__image animate-fade">
+                        <img src="images/Outage%20mode/85708.webp" alt="Outage Mode - payment disruption experience">
                     </div>
-                    
-                    <!-- Design Iterations - Side by Side -->
-                    <div class="project-localization-images" style="margin-top: 40px;">
-                        <div class="project-localization-image-item" style="max-width: 30%; flex: 1 1 30%;">
-                            <div class="project-localization-image" style="height: 400px;">
-                                <img src="images/Outage mode/T2+–+Terminal+(2).webp" alt="Iteration 1" style="object-fit: contain; width: 100%; height: 100%;">
-                            </div>
-                            <p class="project-localization-caption">ITERATION 1: SURFACE DISABLEMENT TOGGLE & FIELD TO EDIT LIMITS</p>
-                        </div>
-                        <div class="project-localization-image-item" style="max-width: 30%; flex: 1 1 30%;">
-                            <div class="project-localization-image" style="height: 400px;">
-                                <img src="images/Outage mode/T2+–+Terminal+(3) (1).webp" alt="Iteration 2" style="object-fit: contain; width: 100%; height: 100%;">
-                            </div>
-                            <p class="project-localization-caption">ITERATION 2: DEEP LINK TO FEATURE MANAGEMENT IN SETTINGS</p>
-                        </div>
-                        <div class="project-localization-image-item" style="max-width: 30%; flex: 1 1 30%;">
-                            <div class="project-localization-image" style="height: 400px;">
-                                <img src="images/Outage mode/Frame+4212508.webp" alt="Iteration 3" style="object-fit: contain; width: 100%; height: 100%;">
-                            </div>
-                            <p class="project-localization-caption">ITERATION 3: OFFLINE MODE AUTO-ENABLED IF SETTINGS ALREADY ON. FEATURE MANAGEMENT DEEPLINKED.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- COLLABORATE CROSS-FUNCTIONALLY Subsection -->
-                    <div class="project-communicating-content" style="margin-top: 60px;">
-                        <h5 class="project-feature-tour-heading">COLLABORATE CROSS-FUNCTIONALLY</h5>
-                        <p class="project-feature-tour-text">We partnered with product and engineering to refine the design, tackling edge cases, country-specific limitations, and platform differences between iOS and Android. We also collaborated with localization, legal, and communications teams to align on broader stakeholder needs.</p>
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
                 </div>
+            </div>
+        </section>
 
-                <!-- POST-LAUNCH ITERATIONS Section -->
-                <div class="project-communicating-section">
-                    <div class="project-communicating-content">
-                        <h4 class="project-communicating-heading">POST-LAUNCH ITERATIONS</h4>
-                        <p class="project-communicating-text">After the next outage, we gathered data and feedback on the experience. While it was successful, we identified small but impactful opportunities for design improvements. To enhance the experience and address confusion, we iterated on the designs. See an example below.</p>
+        <!-- Approach Section -->
+        <section class="om-approach">
+            <div class="ttp-section__inner">
+                <div class="om-approach__grid">
+                    <div class="om-approach__left animate-fade">
+                        <p class="ttp-eyebrow">The Project</p>
+                        <p class="om-approach__text">Design an experience that shifts sellers who are being impacted by a Square service outage into offline mode so they can continue taking payments with minimal disruption until the issue is resolved.</p>
                     </div>
-                    
-                    <!-- Iterations Image - Full Width -->
-                    <div class="project-feature-tour-image-full">
-                        <img src="images/Outage mode/Frame+4212565 (1).webp" alt="Post-launch iterations">
-                    </div>
-                    
-                    <!-- Divider Line -->
-                    <div class="project-process-divider"></div>
-                </div>
-
-                <!-- IMPACT Section -->
-                <div class="project-impact-section">
-                    <div class="project-impact-content">
-                        <h4 class="project-impact-heading">IMPACT</h4>
-                        <ul class="project-impact-bullets">
-                            <li>INCREASE IN USER TRUST</li>
-                            <li>DESCRIBED AS <em>"THE SMOOTHEST OUTAGE WE'VE EVER HAD."</em></li>
-                            <li>RATED HIGHLY IN USABILITY & FEATURE USEFULNESS</li>
-                            <li>PREVENTS PAYMENT LOSS DURING AN OUTAGE</li>
+                    <div class="om-approach__right animate-fade">
+                        <p class="ttp-eyebrow">My Role</p>
+                        <ul class="ttp-role-list">
+                            <li><span class="ttp-bullet"></span> Lead UX Designer</li>
+                            <li><span class="ttp-bullet"></span> Lead Content Designer</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Navigation and Back to Work -->
-                <div class="project-navigation-footer">
-                    <div class="project-back">
-                        <a href="index.html" class="back-link">← Back to Work</a>
+        <!-- Manifesto -->
+        <section class="ttp-manifesto">
+            <div class="ttp-section__inner ttp-section__narrow">
+                <p class="ttp-manifesto__text animate-fade">When systems fail, <em>clarity</em> becomes the lifeline.</p>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="om-process">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">My Process</p>
+                <div class="om-process__grid">
+                    <div class="om-process__card animate-fade">
+                        <p class="om-process__step">Step 01</p>
+                        <h3 class="om-process__title">Understand the journey</h3>
+                        <p class="om-process__desc">Used a user journey map to pinpoint areas for improvement and discovered users were attempting to leverage offline mode during outages.</p>
                     </div>
-                    <div class="project-nav-arrows">
-                        <a href="tap-to-pay.html" class="project-nav-prev">prev</a>
-                        <span class="project-nav-divider">/</span>
-                        <a href="square-one.html" class="project-nav-next">next</a>
+                    <div class="om-process__card animate-fade">
+                        <p class="om-process__step">Step 02</p>
+                        <h3 class="om-process__title">Conduct an audit</h3>
+                        <p class="om-process__desc">Audited the offline experience to identify improvements for outages and reviewed competitor offline flows to gain deeper insights into industry standards.</p>
+                    </div>
+                    <div class="om-process__card animate-fade">
+                        <p class="om-process__step">Step 03</p>
+                        <h3 class="om-process__title">Map the user flow</h3>
+                        <p class="om-process__desc">Created a flowchart by considering possible variants and technical feasibility. Intentional and thoughtful flow of information was the focal point.</p>
+                    </div>
+                    <div class="om-process__card animate-fade">
+                        <p class="om-process__step">Step 04</p>
+                        <h3 class="om-process__title">Partner with design</h3>
+                        <p class="om-process__desc">Partnered with product design to nail down content and determine UI, such as banner placements and color, modal layouts, and the right amount of friction.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Project Navigation Tiles -->
-        <div class="project-nav-tiles-section">
-            <div class="project-nav-tiles-grid">
-                <a href="tap-to-pay.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Tap to Pay.webp" alt="Tap to Pay on iPhone">
+        </section>
+
+        <!-- Partner with Product Design -->
+        <section class="om-partner">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Partner with Product Design</p>
+                <p class="om-partner__intro animate-fade">I partnered with product design to nail down content and determine UI, such as banner placements and color, modal layouts, and determining the right amount of friction. We went through several rounds of iterations until landing on our final solution.</p>
+                <div class="om-partner__grid">
+                    <div class="om-partner__item animate-fade">
+                        <div class="om-partner__image">
+                            <img src="images/Outage%20mode/T2+–+Terminal+(2).webp" alt="Iteration 1 - Surface disablement toggle & field to edit limits">
+                        </div>
+                        <p class="om-partner__label">Iteration 1</p>
+                        <p class="om-partner__desc">Surface disablement toggle & field to edit limits</p>
                     </div>
-                    <h3 class="project-nav-title">TAP TO PAY ON IPHONE</h3>
-                </a>
-                
-                <a href="outage-mode.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Outage Mode.webp" alt="Outage Mode">
+                    <div class="om-partner__item animate-fade">
+                        <div class="om-partner__image">
+                            <img src="images/Outage%20mode/T2+–+Terminal+(3)%20(1).webp" alt="Iteration 2 - Deep link to feature management in settings">
+                        </div>
+                        <p class="om-partner__label">Iteration 2</p>
+                        <p class="om-partner__desc">Deep link to feature management in settings</p>
                     </div>
-                    <h3 class="project-nav-title">OUTAGE MODE</h3>
-                </a>
-                
-                <a href="square-one.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square One.webp" alt="Square One">
+                    <div class="om-partner__item animate-fade">
+                        <div class="om-partner__image">
+                            <img src="images/Outage%20mode/T2%20%E2%80%93%20Terminal.png" alt="Iteration 3 - Offline mode auto-enabled">
+                        </div>
+                        <p class="om-partner__label">Iteration 3</p>
+                        <p class="om-partner__desc">Offline mode auto-enabled if settings already on. Feature management deeplinked.</p>
                     </div>
-                    <h3 class="project-nav-title">SQUARE ONE</h3>
-                </a>
-                
-                <a href="cash-app-square.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Cash App + Square.webp" alt="Cash App Square">
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborate Cross-Functionally -->
+        <section class="om-collab">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Collaborate Cross-Functionally</p>
+                <p class="om-collab__text animate-fade">We partnered with product and engineering to refine the design, tackling edge cases, country-specific limitations, and platform differences between iOS and Android. We also collaborated with localization, legal, and communications teams to align on broader stakeholder needs.</p>
+            </div>
+        </section>
+
+        <!-- Post-Launch Iterations -->
+        <section class="om-postlaunch">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow animate-fade">Post-Launch Iterations</p>
+                <p class="om-postlaunch__intro animate-fade">After the next outage, we gathered data and feedback on the experience. While it was successful, we identified small but impactful opportunities for design improvements. To enhance the experience and address confusion, we iterated on the designs.</p>
+                <div class="om-postlaunch__image animate-fade">
+                    <img src="images/Outage%20mode/newbeforeafter.png" alt="Post-launch iterations - before and after">
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="ttp-reflection om-impact">
+            <div class="ttp-section__inner">
+                <p class="ttp-eyebrow ttp-eyebrow--light animate-fade">Impact</p>
+                <ul class="om-impact__list">
+                    <li class="om-impact__item animate-fade">Increase in user trust</li>
+                    <li class="om-impact__item om-impact__item--italic animate-fade">Described as "the smoothest outage we've ever had."</li>
+                    <li class="om-impact__item animate-fade">Rated highly in usability & feature usefulness</li>
+                    <li class="om-impact__item animate-fade">Prevents payment loss during an outage</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section class="ttp-next">
+            <div class="ttp-section__inner">
+                <a href="tap-to-pay.html" class="ttp-next__link">
+                    <div>
+                        <p class="ttp-eyebrow">Next Project</p>
+                        <p class="ttp-next__title">Tap to Pay on iPhone</p>
                     </div>
-                    <h3 class="project-nav-title">CASH APP 🤝 SQUARE</h3>
-                </a>
-                
-                <a href="square-strategist.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/Square Strategist AI.webp" alt="AI-Generated Business Insights">
-                    </div>
-                    <h3 class="project-nav-title">AI-GENERATED BUSINESS INSIGHTS</h3>
-                </a>
-                
-                <a href="ai-item-library.html" class="project-nav-tile">
-                    <div class="project-nav-image">
-                        <img src="images/AI Library.webp" alt="AI Item Library Generator">
-                    </div>
-                    <h3 class="project-nav-title">AI ITEM LIBRARY GENERATOR</h3>
+                    <span class="ttp-next__arrow" aria-hidden="true">↗</span>
                 </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <a href="https://www.linkedin.com/in/isabelhb/" target="_blank" class="linkedin-link">in</a>
+    <footer id="contact" class="site-footer">
+        <div class="footer-gradient" aria-hidden="true"></div>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <h2 class="footer-heading">Let's talk.</h2>
+                    <p class="footer-intro">I'm always open to discussing new projects, content strategy challenges, or opportunities to collaborate.</p>
+                    <nav class="footer-links">
+                        <a href="https://linkedin.com/in/isabelbakhshi" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="#" class="footer-link" id="resume-link" target="_blank" rel="noopener">Resume<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                        <a href="mailto:hello@isabelbakhshi.com" class="footer-link">Email<span class="footer-link-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span></a>
+                    </nav>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-role">Senior Content Designer</p>
+                    <p class="footer-location">Based in New York City</p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span class="footer-name">Isabel Bakhshi</span>
+                <span class="footer-year">2026</span>
+            </div>
         </div>
     </footer>
 
