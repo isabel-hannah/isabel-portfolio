@@ -4,8 +4,10 @@
     box-sizing: border-box;
 }
 
+/* Avoid overflow-x on html - can cause scroll lock on iOS Safari. */
 html {
-    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll; /* Ensure scroll container exists */
 }
 
 /* Custom cursor - only when injected (pointer devices, no reduced motion) */
@@ -811,7 +813,13 @@ body.home-page .site-footer.animate-fade.in-view {
 }
 
 
+/* Mobile: prevent overflow-x from blocking vertical scroll (iOS Safari fix) */
 @media (max-width: 768px) {
+    body.home-page {
+        overflow-x: clip;
+        overflow-y: auto;
+    }
+
     body.home-page .site-header {
         padding: 20px 24px;
     }
