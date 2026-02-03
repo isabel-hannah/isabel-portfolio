@@ -212,6 +212,11 @@ body.home-page .dotted-i::before {
     transform: translateX(-50%);
     z-index: 1;
 }
+@media (max-width: 768px) {
+    body.home-page .dotted-i::before {
+        top: -0.35em;
+    }
+}
 
 body.home-page .hero-tagline {
     font-family: 'Instrument Serif', Georgia, serif;
