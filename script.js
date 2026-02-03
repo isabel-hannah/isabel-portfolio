@@ -1,42 +1,22 @@
-// Custom cursor - dot (default) and ring (on clickable)
+// Custom cursor - dot (default) and ring (on clickable). Uses CSS vars for zero-lag tracking.
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const prefersFinePointer = window.matchMedia('(pointer: fine)').matches;
 if (prefersFinePointer && !prefersReducedMotion) {
     document.body.classList.add('has-custom-cursor');
+    document.documentElement.style.setProperty('--cursor-x', '-100px');
+    document.documentElement.style.setProperty('--cursor-y', '-100px');
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
     cursor.setAttribute('aria-hidden', 'true');
     cursor.innerHTML = '<span class="cursor-dot"></span><span class="cursor-ring"></span>';
     document.body.appendChild(cursor);
 
-    const dot = cursor.querySelector('.cursor-dot');
-    const ring = cursor.querySelector('.cursor-ring');
-
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
-    let rafId = null;
-    let lastMove = 0;
-
     document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        lastMove = performance.now();
-        if (!rafId) rafId = requestAnimationFrame(animate);
+        document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+        document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
     }, { passive: true });
 
-    function animate() {
-        ringX += (mouseX - ringX) * 0.15;
-        ringY += (mouseY - ringY) * 0.15;
-        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
-        if (performance.now() - lastMove < 150) {
-            rafId = requestAnimationFrame(animate);
-        } else {
-            rafId = null;
-        }
-    }
-
-    const clickables = document.querySelectorAll('a, button, [role="button"], input[type="submit"], .tonal-break__card');
+    const clickables = document.querySelectorAll('a, button, [role="button"], input[type="submit"], .tonal-break__card, .showcase__card');
     clickables.forEach((el) => {
         el.addEventListener('mouseenter', () => cursor.classList.add('is-over-clickable'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('is-over-clickable'));
@@ -51,6 +31,38 @@ const isHomePage = window.location.pathname.endsWith('index.html') || window.loc
 if (isHomePage) {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
+}
+
+// Hero: letter-by-letter hover (spring scale) + cursor glow (direct position, no RAF)
+if (isHomePage && prefersFinePointer && !prefersReducedMotion) {
+    const heroName = document.getElementById('hero-name');
+    const heroGlow = document.getElementById('hero-cursor-glow');
+    const letters = heroName ? heroName.querySelectorAll('.hero-letter, .dotted-i') : [];
+    let heroRect = null;
+    const updateHeroRect = () => {
+        const hero = document.querySelector('.hero');
+        heroRect = hero ? hero.getBoundingClientRect() : null;
+    };
+    updateHeroRect();
+    window.addEventListener('resize', updateHeroRect);
+
+    if (heroGlow) {
+        document.addEventListener('mousemove', (e) => {
+            if (!heroRect) return;
+            if (e.clientY >= heroRect.top && e.clientY <= heroRect.bottom && e.clientX >= heroRect.left && e.clientX <= heroRect.right) {
+                heroGlow.classList.add('is-active');
+                heroGlow.style.left = (e.clientX - heroRect.left) + 'px';
+                heroGlow.style.top = (e.clientY - heroRect.top) + 'px';
+            } else {
+                heroGlow.classList.remove('is-active');
+            }
+        }, { passive: true });
+    }
+
+    letters.forEach((letter) => {
+        letter.addEventListener('mouseenter', () => letter.classList.add('is-hovered'));
+        letter.addEventListener('mouseleave', () => letter.classList.remove('is-hovered'));
+    });
 }
 
 // Homepage showcase - clip-path reveal + parallax
@@ -295,6 +307,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Sticky nav: transparent at top, solid when scrolling
+const siteHeader = document.querySelector('.site-header--sticky');
+if (siteHeader) {
+    const scrollThreshold = 60;
+    function updateHeaderScroll() {
+        if (window.scrollY > scrollThreshold) {
+            siteHeader.classList.add('is-scrolled');
+        } else {
+            siteHeader.classList.remove('is-scrolled');
+        }
+    }
+    updateHeaderScroll();
+    window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+}
 
 // Mobile menu toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
