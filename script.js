@@ -14,20 +14,27 @@ if (prefersFinePointer && !prefersReducedMotion) {
 
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
+    let rafId = null;
+    let lastMove = 0;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-    });
+        lastMove = performance.now();
+        if (!rafId) rafId = requestAnimationFrame(animate);
+    }, { passive: true });
 
     function animate() {
         ringX += (mouseX - ringX) * 0.15;
         ringY += (mouseY - ringY) * 0.15;
-        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-        requestAnimationFrame(animate);
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+        if (performance.now() - lastMove < 150) {
+            rafId = requestAnimationFrame(animate);
+        } else {
+            rafId = null;
+        }
     }
-    animate();
 
     const clickables = document.querySelectorAll('a, button, [role="button"], input[type="submit"], .tonal-break__card');
     clickables.forEach((el) => {

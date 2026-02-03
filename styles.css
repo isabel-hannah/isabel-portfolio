@@ -39,7 +39,8 @@ body.has-custom-cursor {
         background: #7c3aed;
         border-radius: 50%;
         transform: translate(-50%, -50%);
-        transition: opacity 0.2s ease, transform 0.15s ease;
+        will-change: transform;
+        transition: opacity 0.2s ease;
     }
 
     .cursor-ring {
@@ -52,6 +53,7 @@ body.has-custom-cursor {
         border-radius: 50%;
         background: transparent;
         transform: translate(-50%, -50%);
+        will-change: transform;
         opacity: 0;
         transition: opacity 0.2s ease;
     }
@@ -127,28 +129,27 @@ body.home-page .header-nav {
 body.home-page .header-nav a {
     font-family: 'Source Sans 3', sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-decoration: none;
-    color: #525252;
-    opacity: 0.6;
-    transition: color 0.25s ease, opacity 0.25s ease;
+    color: #2d2d2d;
+    transition: color 0.25s ease;
 }
 
 body.home-page .header-nav a:hover {
     color: #0a0a0a;
-    opacity: 1;
 }
 
 body.home-page .hero {
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: calc(100vh - 150px);
+    min-height: calc(100dvh - 150px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     padding: 120px clamp(24px, 8vw, 80px) 80px;
     padding-right: clamp(24px, 15vw, 40%);
+    position: relative;
 }
 
 /* Hero hierarchy - all visible without scroll */
@@ -248,9 +249,42 @@ body.home-page .hero-subline {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Hero scroll indicator - subtle breathing arrow */
+body.home-page .hero-scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #7c3aed;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+body.home-page .hero-scroll-hint:hover {
+    color: #6d28d9;
+    opacity: 0.9;
+}
+body.home-page .hero-scroll-arrow {
+    display: flex;
+    animation: scroll-arrow-breathe 2.5s ease-in-out infinite;
+}
+body.home-page .hero-scroll-arrow svg {
+    width: 14px;
+    height: 14px;
+}
+@keyframes scroll-arrow-breathe {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    body.home-page .hero-scroll-arrow { animation: none; }
+}
+
 /* Showcase / Selected Work - 3-column grid with parallax */
 body.home-page .showcase-section {
-    padding: 128px 24px;
+    padding: 96px 24px 128px;
     overflow: hidden;
 }
 
@@ -956,8 +990,8 @@ body.home-page .site-footer.animate-fade.in-view {
     }
 
     body.home-page .hero {
-        min-height: 100vh;
-        min-height: 100dvh;
+        min-height: calc(100vh - 130px);
+        min-height: calc(100dvh - 130px);
         padding: 80px 20px 60px;
         padding-right: 20%;
     }
@@ -995,6 +1029,10 @@ body.home-page .mobile-menu-toggle {
         font-size: 13px;
         color: #525252;
         padding: 0;
+    }
+
+    body.home-page .hero-scroll-hint {
+        display: none;
     }
 }
 
@@ -1036,17 +1074,15 @@ body.about-page .header-nav {
 body.about-page .header-nav a {
     font-family: 'Source Sans 3', sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-decoration: none;
-    color: rgb(115, 115, 115);
-    opacity: 0.6;
-    transition: color 0.25s ease, opacity 0.25s ease;
+    color: #2d2d2d;
+    transition: color 0.25s ease;
 }
 
 body.about-page .header-nav a:hover {
-    color: rgb(28, 28, 28);
-    opacity: 1;
+    color: #0a0a0a;
 }
 
 body.about-page .animate-fade {
@@ -1562,17 +1598,15 @@ body.experience-page .header-nav {
 body.experience-page .header-nav a {
     font-family: 'Source Sans 3', sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-decoration: none;
-    color: rgb(115, 115, 115);
-    opacity: 0.6;
-    transition: color 0.25s ease, opacity 0.25s ease;
+    color: #2d2d2d;
+    transition: color 0.25s ease;
 }
 
 body.experience-page .header-nav a:hover {
-    color: rgb(28, 28, 28);
-    opacity: 1;
+    color: #0a0a0a;
 }
 
 body.experience-page .mobile-menu-toggle {
@@ -1651,10 +1685,18 @@ body.experience-page .exp-intro__text {
     font-family: 'Instrument Serif', Georgia, serif;
     font-size: clamp(24px, 3vw, 30px);
     line-height: 1.5;
+    font-weight: 400;
     color: rgb(28, 28, 28);
     text-align: center;
     hyphens: none;
     margin: 0;
+}
+body.experience-page .exp-intro__text strong {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 500;
+    font-synthesis: weight;
+    text-shadow: 0 0 0.45px currentColor;
+    -webkit-text-stroke: 0.15px currentColor;
 }
 
 /* Experience Timeline */
@@ -4430,17 +4472,15 @@ body.ttp-case-study main {
 body.project-page .header-nav a {
     font-family: 'Source Sans 3', sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.1em;
-    color: rgb(115, 115, 115);
+    color: #2d2d2d;
     text-decoration: none;
-    opacity: 0.6;
-    transition: color 0.25s ease, opacity 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 body.project-page .header-nav a:hover {
-    color: rgb(28, 28, 28);
-    opacity: 1;
+    color: #0a0a0a;
 }
 
 body.project-page .mobile-menu-toggle {
