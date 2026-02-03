@@ -27,13 +27,13 @@
 <body class="home-page">
     <header class="site-header site-header--sticky">
         <nav class="header-nav">
-            <a href="index.html">Work</a>
+            <a href="index.html" class="is-active">Work</a>
             <a href="experience.html">Experience</a>
             <a href="about.html">About</a>
         </nav>
         <button class="mobile-menu-toggle" aria-label="Toggle menu">Menu</button>
         <nav class="mobile-menu">
-            <a href="index.html">Work</a>
+            <a href="index.html" class="is-active">Work</a>
             <a href="experience.html">Experience</a>
             <a href="about.html">About</a>
         </nav>
@@ -41,8 +41,11 @@
 
     <main>
         <section class="hero">
-            <h1 class="hero-name">Isabel Bakhsh<span class="dotted-i">ı</span></h1>
-            <p class="hero-tagline">I design clarity for complex systems.</p>
+            <div class="hero-cursor-glow" id="hero-cursor-glow" aria-hidden="true"></div>
+            <h1 class="hero-name" id="hero-name">
+                <span class="hero-letter">I</span><span class="hero-letter">S</span><span class="hero-letter">A</span><span class="hero-letter">B</span><span class="hero-letter">E</span><span class="hero-letter">L</span><span class="hero-letter hero-letter--space"> </span><span class="hero-letter">B</span><span class="hero-letter">A</span><span class="hero-letter">K</span><span class="hero-letter">H</span><span class="hero-letter">S</span><span class="hero-letter">H</span><span class="hero-letter dotted-i">I</span>
+            </h1>
+            <p class="hero-tagline">Designing clarity for the systems we use every day—like Tap to Pay.</p>
             <p class="hero-subline">UX Content Designer focused on systems, language, and decision-making.</p>
             <a href="#work" class="hero-scroll-hint" aria-label="Scroll to work">
                 <span class="hero-scroll-arrow" aria-hidden="true">
