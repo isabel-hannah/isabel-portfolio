@@ -452,14 +452,14 @@ body.home-page .showcase__card--outage .showcase__clip {
     border-radius: 0;
 }
 
-body.home-page .showcase__card--outage .showcase__img {
+body.home-page .showcase__card--router .showcase__img {
     object-fit: cover;
-    object-position: 60% 38%;
-    transform: scale(1.08);
+    object-position: center center;
+    transform: scale(1.04);
 }
 
-body.home-page .showcase__card--outage:hover .showcase__img {
-    transform: scale(1.09);
+body.home-page .showcase__card--router:hover .showcase__img {
+    transform: scale(1.05);
 }
 
 body.home-page .showcase__card--ttp .showcase__img {
@@ -547,7 +547,7 @@ body.home-page .features__eyebrow {
     font-family: 'Instrument Serif', Georgia, serif;
     font-size: 3.5rem;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: -0.04em;
     text-transform: none;
     color: #6366f1;
     margin: 0 0 80px 0;
@@ -739,11 +739,6 @@ body.home-page .tonal-break__thumb--ttp {
     padding: 28px;
 }
 
-body.home-page .tonal-break__thumb--outage {
-    align-items: flex-end;
-    padding-bottom: 0;
-}
-
 body.home-page .tonal-break__thumb--cashapp img {
     max-width: 65%;
     max-height: 65%;
@@ -780,6 +775,26 @@ body.home-page .tonal-break__thumb--pink {
 
 body.home-page .tonal-break__thumb--purple {
     background: linear-gradient(135deg, #3a3245 0%, #5c5468 50%, #8e8799 100%);
+}
+
+body.home-page .tonal-break__thumb--outage {
+    background: #7C3AED;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: center;
+    border: none;
+    outline: none;
+}
+body.home-page .tonal-break__thumb--outage img {
+    object-fit: contain;
+    object-position: center bottom;
+    max-width: 72%;
+    max-height: 72%;
+    width: auto;
+    height: auto;
+    display: block;
+    border: none;
+    outline: none;
 }
 
 body.home-page .tonal-break__title {
@@ -2136,17 +2151,9 @@ body.project-page .site-header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
-
-body.ttp-case-study .site-header,
-body.sq1-case-study .site-header,
-body.c4b-case-study .site-header,
-body.om-case-study .site-header,
-body.s2-case-study .site-header,
-body.ailibrary-case-study .site-header,
-body.mexico-case-study .site-header {
-    justify-content: space-between;
-    padding: 24px clamp(24px, 6vw, 80px);
+    padding: 24px 80px;
+    background: transparent;
+    border-bottom: none;
 }
 
 body.project-page .site-header--sticky {
@@ -2163,28 +2170,6 @@ body.project-page .site-header--sticky.is-scrolled {
 }
 
 body.project-page .header-nav {
-    display: flex;
-    gap: 48px;
-}
-
-body.ttp-case-study .header-nav.ttp-header-nav,
-body.sq1-case-study .header-nav.ttp-header-nav,
-body.c4b-case-study .header-nav.ttp-header-nav,
-body.om-case-study .header-nav.ttp-header-nav,
-body.s2-case-study .header-nav.ttp-header-nav,
-body.ailibrary-case-study .header-nav.ttp-header-nav,
-body.mexico-case-study .header-nav.ttp-header-nav {
-    width: 100%;
-    justify-content: space-between;
-}
-
-body.ttp-case-study .header-nav-right,
-body.sq1-case-study .header-nav-right,
-body.c4b-case-study .header-nav-right,
-body.om-case-study .header-nav-right,
-body.s2-case-study .header-nav-right,
-body.ailibrary-case-study .header-nav-right,
-body.mexico-case-study .header-nav-right {
     display: flex;
     gap: 48px;
 }
@@ -2206,7 +2191,7 @@ body.ttp-case-study main {
 
 .ttp-eyebrow {
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -2446,8 +2431,10 @@ body.ttp-case-study main {
 }
 
 .ttp-journey__card {
-    padding: 32px;
-    background: rgb(245, 244, 242);
+    padding: 40px;
+    background: #f9f9f7;
+    border: none;
+    box-shadow: none;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -2712,6 +2699,53 @@ body.ttp-case-study main {
 }
 
 .ttp-next__arrow {
+    font-size: 32px;
+}
+
+/* Ensure Next Project matches across all project pages (including Square Backup) */
+body.router-case-study .ttp-next {
+    padding: 64px 0 96px;
+    border-top: 1px solid rgb(230, 228, 225);
+    background: transparent;
+}
+body.router-case-study .ttp-next .ttp-section__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 6vw, 80px);
+}
+@media (max-width: 640px) {
+    body.router-case-study .ttp-next .ttp-section__inner {
+        padding: 0 24px;
+    }
+}
+@media (max-width: 480px) {
+    body.router-case-study .ttp-next .ttp-section__inner {
+        padding: 0 20px;
+    }
+}
+body.router-case-study .ttp-next .ttp-eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(115, 115, 115);
+    margin: 0 0 16px 0;
+}
+body.router-case-study .ttp-next .ttp-next__title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 400;
+    margin: 8px 0 0 0;
+    color: rgb(28, 28, 28);
+}
+body.router-case-study .ttp-next .ttp-next__link {
+    color: rgb(28, 28, 28);
+}
+body.router-case-study .ttp-next .ttp-next__link:hover {
+    color: rgb(115, 115, 115);
+}
+body.router-case-study .ttp-next .ttp-next__arrow {
     font-size: 32px;
 }
 
@@ -3593,6 +3627,966 @@ body.ttp-case-study main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Square Backup – matches site color scheme (project pages) */
+body.router-case-study .router-hero__title {
+    color: #4338ca;
+}
+body.router-case-study .om-hero {
+    padding: 120px clamp(24px, 6vw, 80px) 80px;
+    min-height: auto;
+}
+body.router-case-study .om-hero__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+body.router-case-study .om-hero__grid {
+    gap: 80px;
+    align-items: center;
+}
+body.router-case-study .router-hero__image {
+    background: rgb(245, 244, 242);
+    border-radius: 4px;
+    overflow: hidden;
+}
+body.router-case-study .router-hero__image img {
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Hero image parallax (y shift applied via JS) */
+body.router-case-study .router-hero__parallax {
+    overflow: hidden;
+}
+body.router-case-study .router-hero__parallax img {
+    will-change: transform;
+}
+
+/* Hero metadata: single horizontal line, Indigo labels */
+body.router-case-study .router-hero__meta.om-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgb(230, 228, 225);
+}
+body.router-case-study .router-meta__item {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    color: rgb(28, 28, 28);
+}
+body.router-case-study .router-meta__label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4338ca;
+    margin-right: 6px;
+}
+
+/* The Context + My Contributions – matches project page style */
+.router-context {
+    padding: 96px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgb(230, 228, 225);
+}
+.router-context__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+.router-context__block,
+.router-contributions {
+    padding: 0;
+}
+.router-context__heading,
+.router-contributions__heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4338ca;
+    margin: 0 0 16px 0;
+    font-weight: 400;
+}
+.router-context__text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgb(28, 28, 28);
+    margin: 0;
+}
+.router-contributions__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgb(28, 28, 28);
+}
+.router-contributions__list li {
+    position: relative;
+    padding-left: 20px;
+}
+.router-contributions__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4338ca;
+}
+@media (max-width: 768px) {
+    .router-context__inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Quote – stands alone, light cream background */
+.router-quote-section {
+    padding: 120px clamp(24px, 6vw, 80px);
+    background: #f9f8f4;
+}
+.router-quote-section__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.router-quote-section .router-crisis__quote {
+    margin: 0;
+}
+
+/* Phase 1: Alpha – different background, static cards */
+.router-phase1-section {
+    padding: 96px clamp(24px, 6vw, 80px) 120px;
+    background: #f5f5f1;
+}
+.router-phase1-section .router-crisis__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Phase 1: Alpha – two-column cards (The stakes | The insight), equal height */
+body.router-case-study .router-phase1 {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+body.router-case-study .router-phase1__label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin: 48px 0 40px 0;
+}
+body.router-case-study .router-phase1__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+}
+body.router-case-study .router-phase1__card {
+    background: #f9f9f7;
+    padding: 2.5rem;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body.router-case-study .router-phase1__card-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: rgb(28, 28, 28);
+    margin: 0 0 20px 0;
+}
+body.router-case-study .router-phase1__card-text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #374151;
+    margin: 0 0 24px 0;
+}
+.router-phase1__quote-wrap {
+    margin-top: 24px;
+}
+body.router-case-study .router-phase1__quote {
+    position: relative;
+    padding-left: 1.5rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #374151;
+    margin: 0 0 8px 0;
+    font-style: italic;
+}
+body.router-case-study .router-phase1__quote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #6366f1;
+}
+.router-phase1__attribution {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    color: rgb(115, 115, 115);
+    margin: 0;
+}
+body.router-case-study .router-phase1__transition {
+    margin-top: 80px;
+    padding-top: 64px;
+    text-align: left;
+}
+body.router-case-study .router-phase1__transition-heading {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: #374151;
+    margin: 0 0 16px 0;
+    text-transform: none;
+}
+body.router-case-study .router-phase1__transition-text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #6b7280;
+    margin: 0;
+    max-width: 42rem;
+}
+@media (max-width: 768px) {
+    body.router-case-study .router-phase1__grid {
+        grid-template-columns: 1fr;
+    }
+    body.router-case-study .router-phase1__card {
+        padding: 2rem;
+    }
+}
+
+/* Quote text (used inside .router-crisis__quote) */
+.router-quote__text {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: rgb(28, 28, 28);
+    margin: 0;
+    font-style: normal;
+}
+
+/* Word-by-word reveal (router case study only) – editorial stagger */
+/* Keep quote container visible so only words stagger (override project-page .animate-fade) */
+body.router-case-study .router-crisis__quote.animate-fade,
+body.router-case-study .router-quote__text.animate-fade {
+    opacity: 1;
+    transform: none;
+}
+body.router-case-study .router-crisis__quote .router-quote__word,
+body.router-case-study .router-quote__text .router-quote__word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word,
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word {
+    opacity: 1;
+}
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(1),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(1) { transition-delay: 0ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(2),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(2) { transition-delay: 55ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(3),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(3) { transition-delay: 110ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(4),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(4) { transition-delay: 165ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(5),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(5) { transition-delay: 220ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(6),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(6) { transition-delay: 275ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(7),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(7) { transition-delay: 330ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(8),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(8) { transition-delay: 385ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(9),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(9) { transition-delay: 440ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(10),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(10) { transition-delay: 495ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(11),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(11) { transition-delay: 550ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(12),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(12) { transition-delay: 605ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(13),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(13) { transition-delay: 660ms; }
+body.router-case-study .router-crisis__quote.animate-fade.in-view .router-quote__word:nth-child(14),
+body.router-case-study .router-quote__text.animate-fade.in-view .router-quote__word:nth-child(14) { transition-delay: 715ms; }
+@media (prefers-reduced-motion: reduce) {
+    body.router-case-study .router-crisis__quote .router-quote__word,
+    body.router-case-study .router-quote__text .router-quote__word {
+        opacity: 1;
+        transition: none;
+    }
+}
+
+/* Designing the Vision – full-bleed black section */
+.router-vision {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 96px clamp(24px, 6vw, 80px) 96px;
+    background: #000000;
+    border: none;
+    box-sizing: border-box;
+}
+.router-vision__heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 249, 247, 0.5);
+    margin: 0 0 32px 0;
+    font-weight: 400;
+    padding: 0 clamp(24px, 6vw, 80px);
+}
+.router-vision__bleed {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 48px 0;
+    overflow: hidden;
+    border-radius: 0;
+}
+.router-vision__figure {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #000000;
+}
+.router-vision__figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: screen;
+}
+/* Staggered fade-in for collage */
+.router-vision__figure--stagger {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.15s;
+}
+.router-vision__figure--stagger.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+.router-vision__caption {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.5;
+    color: rgb(250, 249, 247);
+    margin: 0 auto;
+    max-width: 40rem;
+    text-align: center;
+    padding: 0 clamp(24px, 6vw, 80px);
+}
+
+/* Phase 2: Vision Sprint */
+.router-phase2 {
+    padding: 96px clamp(24px, 6vw, 80px);
+    margin-top: 128px;
+    background: rgb(245, 244, 242);
+}
+.router-phase2__inner {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+.router-phase2 .ttp-journey__card {
+    padding: 48px;
+}
+.router-phase2__label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin: 0 0 48px 0;
+}
+.router-phase2__grid--main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+}
+.router-phase2__card {
+    padding: 48px;
+    background: #f9f9f7;
+    border: none;
+    box-shadow: none;
+}
+.router-phase2__card-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: none;
+    color: #4338ca;
+    margin: 0 0 16px 0;
+}
+.router-phase2__card-text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgb(115, 115, 115);
+    margin: 0;
+}
+
+/* Vision Prototype */
+.router-prototype {
+    padding: 96px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgb(230, 228, 225);
+}
+.router-prototype__inner {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+.router-prototype__label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(115, 115, 115);
+    margin: 0 0 48px 0;
+}
+.router-prototype__wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+.router-prototype__narrative {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: #1a1a1a;
+    max-width: 60ch;
+    margin: 0 0 48px 0;
+}
+.router-prototype__grid {
+    display: grid;
+    grid-template-columns: 6.5fr 3.5fr;
+    gap: 16px;
+    align-items: start;
+}
+.router-prototype__column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.router-prototype__column .router-prototype__step-caption {
+    margin-bottom: 16px;
+}
+.router-prototype__card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.router-prototype__card--left {
+    height: 600px;
+    padding: 24px;
+}
+.router-prototype__card--left .router-prototype__image {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+}
+.router-prototype__card--right {
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+}
+.router-prototype__card--right .router-prototype__image {
+    width: 95%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+.router-prototype__step-caption {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+}
+
+/* Serif Hook */
+.router-serif-hook {
+    padding: 120px clamp(24px, 6vw, 80px);
+    background: rgb(250, 249, 247);
+}
+.router-serif-hook__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.router-serif-hook__text {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: rgb(28, 28, 28);
+    margin: 0;
+}
+
+/* Transition Section – Beyond the Alpha */
+.router-transition {
+    padding: 96px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgb(230, 228, 225);
+    background: rgb(250, 249, 247);
+}
+.router-transition__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.router-transition__heading {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: rgb(28, 28, 28);
+    margin: 0 0 24px 0;
+}
+.router-transition__text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0;
+}
+
+/* Strategic Outcome (Impact) + Setup Guide slide-up reveal */
+.router-outcome {
+    position: relative;
+}
+.router-outcome__reveal {
+    width: 100%;
+    max-width: 960px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+    overflow: hidden;
+}
+.router-outcome__reveal img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transform: translateY(60px);
+    opacity: 0;
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.router-outcome__reveal.is-revealed img {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Phase 1 & Phase 2 */
+.router-phase {
+    padding: 96px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgb(230, 228, 225);
+}
+.router-phase--vision {
+    background: rgb(250, 249, 247);
+}
+.router-phase__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.router-phase__heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4338ca;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+.router-phase__subheading {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 400;
+    color: rgb(28, 28, 28);
+    margin: 0 0 24px 0;
+}
+.router-phase__narrative {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(115, 115, 115);
+    margin: 0 0 40px 0;
+    max-width: 640px;
+}
+.router-alpha-mockups {
+    margin-top: 32px;
+}
+.router-placeholder-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    color: rgb(115, 115, 115);
+    margin: 0 0 12px 0;
+}
+.router-placeholder-box {
+    min-height: 280px;
+    background: rgb(245, 244, 242);
+    border: 1px dashed rgb(200, 198, 195);
+    border-radius: 4px;
+}
+.router-vision-solution {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+}
+.router-vision-solution img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Reflection */
+.router-reflection {
+    padding: 96px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgb(230, 228, 225);
+    background: rgb(28, 28, 28);
+}
+.router-reflection__inner {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+.router-reflection__label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 249, 247, 0.5);
+    margin: 0 0 32px 0;
+}
+.router-reflection__text {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: rgb(250, 249, 247);
+    margin: 0;
+}
+.router-reflection__dot {
+    color: #6366f1;
+}
+
+/* The Outcome */
+.router-outcome-section {
+    padding: 192px clamp(24px, 6vw, 80px);
+    background: #f5f5f1;
+    border: none;
+}
+.router-outcome-section__inner {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+.router-outcome-section__label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(115, 115, 115);
+    margin: 0 0 16px 0;
+}
+.router-outcome-section__narrative {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgb(28, 28, 28);
+    margin: 0 0 64px 0;
+    max-width: 48rem;
+}
+.router-outcome-section__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px 80px;
+    max-width: 48rem;
+    background: none;
+    border: none;
+}
+.router-outcome-section__metric {
+    text-align: left;
+}
+.router-outcome-section__metric-value {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(72px, 12vw, 128px);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    color: #4338ca;
+    margin: 0;
+    line-height: 1;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.router-outcome-section__metric-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: #4b5563;
+    margin: 16px 0 0 0;
+    text-align: left;
+}
+.router-outcome-section__metric:nth-child(2) .router-outcome-section__metric-label {
+    padding-left: 0.12em;
+}
+
+/* Square Backup product shot */
+.router-product {
+    padding: 120px clamp(24px, 6vw, 80px);
+    background: rgb(250, 249, 247);
+}
+.router-product__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.router-product__figure {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
+}
+.router-product__figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 1024px) {
+    .router-prototype__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .router-prototype__card--left {
+        height: 480px;
+    }
+    .router-prototype__card--right {
+        padding: 32px;
+    }
+}
+@media (max-width: 900px) {
+    body.router-case-study .om-hero__grid {
+        gap: 48px;
+    }
+    .router-phase2 {
+        margin-top: 64px;
+    }
+    .router-phase2__grid--main {
+        grid-template-columns: 1fr;
+    }
+    .router-outcome-section__metrics {
+        grid-template-columns: 1fr;
+    }
+    .router-quote-section {
+        padding: 80px clamp(24px, 5vw, 48px);
+    }
+    .router-phase1-section {
+        padding: 64px clamp(24px, 5vw, 48px) 80px;
+    }
+    .router-vision {
+        padding: 80px clamp(24px, 5vw, 48px) 48px;
+    }
+    .router-serif-hook {
+        padding: 80px clamp(24px, 5vw, 48px);
+    }
+    .router-transition {
+        padding: 80px clamp(24px, 5vw, 48px);
+    }
+    .router-phase {
+        padding: 64px clamp(24px, 5vw, 48px);
+    }
+    .router-reflection {
+        padding: 64px clamp(24px, 5vw, 48px) 80px;
+    }
+    .router-product {
+        padding: 80px clamp(20px, 5vw, 40px);
+    }
+    .router-phase2 {
+        padding: 80px clamp(24px, 5vw, 48px);
+    }
+    .router-prototype {
+        padding: 80px clamp(24px, 5vw, 48px);
+    }
+    .router-outcome-section {
+        padding: 80px clamp(24px, 5vw, 48px);
+    }
+}
+
+@media (max-width: 640px) {
+    .router-quote-section {
+        padding: 64px 24px;
+    }
+    .router-phase1-section {
+        padding: 48px 24px 64px;
+    }
+    .router-vision {
+        padding: 80px 24px 48px;
+    }
+    .router-vision__heading {
+        padding: 0 24px;
+    }
+    .router-vision__caption {
+        padding: 0 24px;
+    }
+    .router-serif-hook {
+        padding: 64px 24px;
+    }
+    .router-transition {
+        padding: 64px 24px;
+    }
+    .router-phase {
+        padding: 48px 24px;
+    }
+    .router-reflection {
+        padding: 48px 24px 64px;
+    }
+    .router-product {
+        padding: 64px 24px;
+    }
+    .router-phase2 {
+        padding: 64px 24px;
+        margin-top: 64px;
+    }
+    .router-phase2__card {
+        padding: 48px 24px;
+    }
+    .router-phase2 .ttp-journey__card {
+        padding: 40px 24px;
+    }
+    body.router-case-study .router-phase1__card {
+        padding: 1.5rem;
+    }
+    .router-prototype {
+        padding: 64px 24px;
+    }
+    .router-prototype__wrap {
+        padding: 0;
+        max-width: 100%;
+    }
+    .router-prototype__narrative {
+        font-size: 1.0625rem;
+        margin-bottom: 40px;
+        max-width: 100%;
+    }
+    .router-prototype__grid {
+        gap: 32px;
+    }
+    .router-prototype__card--left {
+        height: 360px;
+        padding: 16px;
+    }
+    .router-prototype__card--right {
+        padding: 24px;
+    }
+    .router-prototype__step-caption {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+    }
+    .router-prototype__column .router-prototype__step-caption {
+        margin-bottom: 12px;
+    }
+    .router-outcome-section {
+        padding: 64px 24px;
+    }
+    .router-outcome-section__metric-value {
+        font-size: clamp(48px, 14vw, 72px);
+    }
+    .router-context {
+        padding: 64px 24px;
+    }
+    .router-context__inner {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body.router-case-study {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    body.router-case-study .om-hero {
+        padding: 100px 20px 64px;
+    }
+    .router-prototype {
+        padding: 48px 20px;
+    }
+    .router-prototype__narrative {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+    .router-prototype__card--left {
+        height: 300px;
+        padding: 12px;
+    }
+    .router-prototype__card--right {
+        padding: 20px;
+    }
+    .router-prototype__step-caption {
+        font-size: 9px;
+        letter-spacing: 0.18em;
+    }
+    .router-context {
+        padding: 48px 20px;
+    }
+    .router-phase2 {
+        margin-top: 48px;
+    }
+    .router-outcome-section__metric-value {
+        font-size: clamp(40px, 16vw, 60px);
+    }
+    .router-outcome-section__narrative {
+        font-size: 1.125rem;
+    }
+    .router-quote-section .router-crisis__quote,
+    .router-quote-section .router-quote__text {
+        font-size: clamp(24px, 6vw, 32px);
+    }
 }
 
 .om-approach {
@@ -4685,15 +5679,8 @@ body.project-page .mobile-menu-toggle {
         color: rgb(115, 115, 115);
         cursor: pointer;
     }
-    body.ttp-case-study .site-header,
-    body.sq1-case-study .site-header,
-    body.c4b-case-study .site-header,
-    body.om-case-study .site-header,
-    body.s2-case-study .site-header,
-    body.ailibrary-case-study .site-header,
-    body.mexico-case-study .site-header {
-        padding-left: 24px;
-        padding-right: 24px;
+    body.project-page .site-header {
+        padding: 20px 24px;
     }
 }
 
@@ -5124,15 +6111,8 @@ body.project-page .animate-fade.in-view {
         padding-left: 20px;
         padding-right: 20px;
     }
-    body.ttp-case-study .site-header,
-    body.sq1-case-study .site-header,
-    body.c4b-case-study .site-header,
-    body.om-case-study .site-header,
-    body.s2-case-study .site-header,
-    body.ailibrary-case-study .site-header,
-    body.mexico-case-study .site-header {
-        padding-left: 20px;
-        padding-right: 20px;
+    body.project-page .site-header {
+        padding: 20px;
     }
 }
 
