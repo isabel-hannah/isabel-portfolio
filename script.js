@@ -191,6 +191,91 @@ if (fadeEls.length) {
     }
 }
 
+// Square Backup page – quote word-reveal, hero parallax, vision stagger, outcome reveal
+if (document.body.classList.contains('router-case-study')) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const quoteEl = document.querySelector('.router-crisis__quote.animate-fade, .router-quote__text.animate-fade');
+    if (quoteEl && !prefersReducedMotion) {
+        function triggerQuoteReveal() {
+            const rect = quoteEl.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !quoteEl.classList.contains('in-view')) {
+                quoteEl.classList.add('in-view');
+            }
+        }
+        requestAnimationFrame(function () { requestAnimationFrame(triggerQuoteReveal); });
+        window.addEventListener('load', triggerQuoteReveal);
+    }
+
+    // Hero image subtle parallax (y shift)
+    const heroParallax = document.querySelector('.router-hero__parallax img');
+    if (heroParallax && !prefersReducedMotion) {
+        let rafId = null;
+        function updateParallax() {
+            const section = heroParallax.closest('.om-hero');
+            if (!section) return;
+            const rect = section.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const progress = Math.max(0, Math.min(1, (vh * 0.5 - rect.top) / (vh * 0.8)));
+            const y = (progress - 0.5) * 24;
+            heroParallax.style.transform = `translateY(${y}px)`;
+        }
+        function onScroll() {
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => { updateParallax(); rafId = null; });
+        }
+        updateParallax();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+    }
+
+    // Vision collage staggered fade-in
+    const visionFigure = document.querySelector('.router-vision__figure--stagger');
+    if (visionFigure && !prefersReducedMotion && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+        }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+        io.observe(visionFigure);
+    } else if (visionFigure) {
+        visionFigure.classList.add('in-view');
+    }
+
+    // Strategic Outcome – slide up Setup Guide when section reaches view
+    const outcomeReveal = document.getElementById('router-setup-guide-reveal');
+    if (outcomeReveal && !prefersReducedMotion && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('is-revealed'); });
+        }, { rootMargin: '0px 0px -100px 0px', threshold: 0.2 });
+        io.observe(outcomeReveal);
+    } else if (outcomeReveal) {
+        outcomeReveal.classList.add('is-revealed');
+    }
+
+    // Scroll-based parallax for context + phase 1 cards (Vercel-style useTransform)
+    const parallaxWrappers = document.querySelectorAll('.router-parallax-wrap');
+    if (parallaxWrappers.length && !prefersReducedMotion) {
+        const ranges = [[100, -100], [150, -150], [80, -80], [120, -120]];
+        let rafId = null;
+        function updateCardParallax() {
+            const scrollY = window.scrollY;
+            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const progress = Math.max(0, Math.min(1, scrollY / maxScroll));
+            parallaxWrappers.forEach((wrap, i) => {
+                const [start, end] = ranges[i % ranges.length];
+                const y = start + (end - start) * progress;
+                wrap.style.transform = `translateY(${y}px)`;
+            });
+        }
+        function onParallaxScroll() {
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => { updateCardParallax(); rafId = null; });
+        }
+        updateCardParallax();
+        window.addEventListener('scroll', onParallaxScroll, { passive: true });
+        window.addEventListener('resize', onParallaxScroll);
+    }
+}
+
 // About page - Hero image entrance
 if (document.body.classList.contains('about-page')) {
     requestAnimationFrame(() => {

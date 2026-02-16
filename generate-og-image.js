@@ -23,6 +23,11 @@ const path = require('path');
   const htmlPath = path.join(__dirname, 'og-image.html');
   const outPath = path.join(__dirname, 'og-image.jpg');
 
+  if (!fs.existsSync(htmlPath)) {
+    console.error(`Error: og-image.html not found at ${htmlPath}. Create this file before running the script.`);
+    process.exit(1);
+  }
+
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
 
